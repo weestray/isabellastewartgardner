@@ -1,11 +1,464 @@
 /* ===== YOUR CSS GOES HERE ===== */
 /* ===== START BY IMPORTING YOUR FONTS ===== */ 
+@font-face {
+    font-family: Cinzel;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Cinzel"), local("Cinzel-Variable"), url(/styles/fonts/Cinzel-VariableFont_wght.ttf)
+        format("truetype");
+  }
+
+  @font-face {
+    font-family: CinzelDecorative;
+    font-style: normal;
+    font-weight: 700;
+    src: local("CinzelDecorative"), local("CinzelDecorative"), url(/styles/fonts/CinzelDecorative-Regular.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: CinzelDecorative-Bold;
+    font-size: normal;
+    font-weight: 700;
+    src: local("CinzelDecorative-Bold"), url(/styles/fonts/CinzelDecorative-Bold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    src: local("Montserrat-Variable"), url(/styles/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: Montserrat-Italic;
+    font-style: italic;
+    src: local("Montserrat-Italic"), url(/styles/fonts/Montserrat-Italic-VariableFont_wght.ttf) format("truetype");
+  }
+
+
+
+
 /* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
-/* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
+:root {
+    --color-primary: #2B2B2B;
+    --color-primary-alt: #FBFAF8;
+    --color-secondary: #F14B17;
+    --color-background: #19473B;
+    --font-family: "Roboto", sans-serif;
+    --font-weight-strong: 500;
+    --font-size-h1: 6rem;
+    --font-size-h2: 2.5em;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.35rem;
+    --font-size-text: 16px;
+    --border-radius: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  p {
+    font-size: 2em;
+}
 
 body {
-    background: magenta;
+    font-family: Montserrat, sans-serif;  
+    padding: 0;        
+    box-sizing: border-box;
+    background-color: var(--color-background);
 }
-p {
+
+h1 {
+    font-family: CinzelDecorative-Bold;
+    color: var(--color-secondary);
+}
+
+.logo p {
+    font-family: CinzelDecorative;
+    color: var(--color-primary-alt);
+    padding-bottom: 1em;
+    border-bottom: var(--color-primary-alt) 1px solid;
+}
+
+.instructions {
+    color: var(--color-primary-alt);
+}
+/* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
+
+
+.paintingfacts {
+    display: flex;
+    align-items: center;
+}
+
+.paintingfactbox {
+    height: 100px;
+    width: 100px;
     font-size: 2em;
+  padding: 20px;
+  background-color: var(--color-primary-alt);
+  text-align: center;
+  place-content: center;
+  width: 150px;
+
+}
+
+
+
+
+.missing-card {
+    flex: 1 0 30%;      
+    max-width: 180px;                   
+    text-align: center;                  
+    cursor: pointer;                    
+    transition: transform 0.3s;
+    filter: drop-shadow(0 0 0.5rem #877b61); 
+    margin-bottom: 2em;      
+}
+
+.missing-card:hover {
+    transform: scale(1.05); 
+    filter: drop-shadow(0 0 0.75rem #c6b48b);             
+}
+
+.missing-card img {
+    width: 100%;                       
+}
+
+.begin-game {
+    text-align: center;
+}
+
+.begin-game button {
+    box-shadow: 0 0 0.5rem #ccb2b2; 
+}
+
+
+@media (max-width: 800px) {
+
+
+    .info-panel button {
+        display: block;
+        margin: 10px auto 0;
+        padding: 10px 20px;
+        background-color: var(--color-secondary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+
+
+.info-panel nav {
+    text-align: left;
+    margin-left: 1em;
+}
+
+.info-panel nav h1{
+    font-size: 2rem;
+    margin-bottom: .1rem;
+
+}
+.info-panel nav p{
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    font-family: CinzelDecorative;
+color: var(--color-primary-alt);
+}
+.back2home {
+border: 1px solid blue;
+width: 18em;
+text-align: center;
+margin: auto;
+margin-top: 0;
+}
+.info-grid img {
+max-width: 30em;
+}
+
+
+
+.info-grid div{
+    margin: 1em;
+}
+
+.info-grid {
+    
+    
+   
+}
+
+.info-grid .placard {
+    background-color: white;
+    font-size: 0.5rem;
+    margin: auto;
+    max-width: 45em;
+    margin-top: 3em;
+    padding: 10px;
+}
+.info-grid .placard h2, .info-grid .placard h3 {
+    text-align: left;
+    font-size: 1rem;
+    line-height: .5em;
+    text-transform: uppercase;
+}
+
+.info-panel {
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: var(--color-background);
+    padding: 20px;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    width: 100vw; 
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    }
+
+.info-grid .placard h2 {
+    font-weight: 600;
+}
+.info-grid .placard h3 {
+    font-weight: 400;
+}
+
+.info-grid .placard p {
+    font-weight: 400;
+    margin-top: 3em;
+    text-align: left;
+    font-size: .9rem;
+    font-family: Montserrat-Italic;
+}
+
+
+.info-grid .paintingfacts {
+    font-size: 0.5rem;
+    margin-bottom: 2em;
+}
+
+.info-grid .paintingfull {
+    max-width: 1em;
+
+}
+
+    html {
+        background-color: pink; 
+    }
+    .missing-card {
+            
+    }
+    .logo {
+        padding: 1rem;
+        display: block;
+        font-family: CinzelDecorative-Bold;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .logo h1{
+        margin-bottom: 0;
+    }
+    .logo p {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    .instructions {
+        font-size: 1em;
+        margin: auto;
+        padding: 2em;
+        max-width: 50ch;
+        text-align: left;
+    }
+    .gallery {
+        display: flex;
+        width: 80vw;
+        flex-wrap: wrap;                              
+        gap: 15px;                           
+        margin: auto;
+        
+    }
+
+
+
+
+
+
+
+
+}
+
+@media (min-width: 800px) {
+    
+    
+    .info h1 {
+        padding: 0rem;
+        display: block;
+        text-align: left; 
+        font-family: CinzelDecorative-Bold;
+        font-size: 4rem;
+        max-width: 5ch;
+        margin-bottom: 0;
+    }
+
+    .logo p {
+        font-size: 1em;
+        border-bottom: var(--color-primary-alt) 1px solid;
+        padding-bottom: 1em;
+        
+    }
+    
+    
+    html {
+        margin-left: 3rem;
+    }
+
+    .main {
+        display: flex;
+        
+        margin: 4rem 4rem 2rem 2rem;
+        height: 80vh;
+        justify-content: space-between;
+    }
+
+    .logo p {
+        
+        font-size: 1.2rem;
+    }
+    .instructions {
+        font-size: .8rem;
+        max-width: 20rem;
+    }
+   
+    
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;                    
+        justify-content: left;              
+        gap: 25px;                           
+        margin: auto;
+        padding: 0px 40px; 
+    }
+    
+       
+
+.info-panel button {
+            display: block;
+            margin: 10px auto 0;
+            padding: 10px 20px;
+            background-color: var(--color-secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+    .info-panel {
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: var(--color-background);
+    padding: 20px;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    width: 100vw; 
+    height: 100vh;
+    text-align: center;
+    }
+
+    .info-panel nav {
+        text-align: left;
+        margin-left: 1em;
+    }
+
+   .info-panel nav h1{
+        font-size: 2rem;
+        margin-bottom: .1rem;
+
+    }
+    .info-panel nav p{
+        font-size: 1.2rem;
+        margin-top: .5rem;
+        font-family: CinzelDecorative;
+    color: var(--color-primary-alt);
+    }
+.back2home {
+    border: 1px solid blue;
+    width: 18em;
+}
+    .info-grid img {
+    max-width: 22em;
+    
+    }
+
+    .info-grid .paintingfull {
+        grid-row: 1 / span 2;
+
+    }
+
+    .info-grid div{
+        margin: 1em;
+    }
+
+    .info-grid {
+        max-width: 50em;
+        max-height: 45em;
+        display: grid;
+        gap: 3em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-auto-flow: column;
+        border: 1px solid pink;
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    .info-grid .placard {
+        background-color: white;
+        font-size: 0.5rem;
+        max-height: 18em;
+        max-width: 45em;
+        margin-top: 3em;
+        padding: 10px;
+    }
+    .info-grid .placard h2, .info-grid .placard h3 {
+        text-align: left;
+        font-size: 1rem;
+        line-height: .5em;
+        text-transform: uppercase;
+    }
+    
+
+    .info-grid .placard h2 {
+        font-weight: 600;
+    }
+    .info-grid .placard h3 {
+        font-weight: 400;
+    }
+
+    .info-grid .placard p {
+        font-weight: 400;
+        margin-top: 3em;
+        text-align: left;
+        font-size: .9rem;
+        font-family: Montserrat-Italic;
+    }
+
+
+    .info-grid .paintingfacts {
+        font-size: 0.5rem;
+        margin-bottom: 2em;
+    }
+
 }
