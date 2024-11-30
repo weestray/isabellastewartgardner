@@ -1,471 +1,500 @@
 /* ===== YOUR CSS GOES HERE ===== */
 /* ===== START BY IMPORTING YOUR FONTS ===== */ 
-@font-face {
-    font-family: Cinzel;
-    font-style: normal;
-    font-weight: 400;
-    src: local("Cinzel"), local("Cinzel-Variable"), url(/styles/fonts/Cinzel-VariableFont_wght.ttf)
-        format("truetype");
-  }
 
-  @font-face {
-    font-family: CinzelDecorative;
-    font-style: normal;
-    font-weight: 700;
-    src: local("CinzelDecorative"), local("CinzelDecorative"), url(/styles/fonts/CinzelDecorative-Regular.ttf)
-        format("truetype");
-  }
-  @font-face {
-    font-family: CinzelDecorative-Bold;
-    font-size: normal;
-    font-weight: 700;
-    src: local("CinzelDecorative-Bold"), url(/styles/fonts/CinzelDecorative-Bold.ttf) format("truetype");
-  }
-
-  @font-face {
-    font-family: Montserrat;
-    font-style: normal;
-    src: local("Montserrat-Variable"), url(/styles/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
-  }
-
-  @font-face {
-    font-family: Montserrat-Italic;
-    font-style: italic;
-    src: local("Montserrat-Italic"), url(/styles/fonts/Montserrat-Italic-VariableFont_wght.ttf) format("truetype");
-  }
-
-
-
-
-/* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
 :root {
-    --color-primary: #2B2B2B;
-    --color-primary-alt: #FBFAF8;
-    --color-secondary: #F14B17;
-    --color-background: #19473B;
-    --font-family: "Roboto", sans-serif;
-    --font-weight-strong: 500;
-    --font-size-h1: 6rem;
-    --font-size-h2: 2.5em;
-    --font-size-h3: 1.5rem;
-    --font-size-h4: 1.35rem;
-    --font-size-text: 16px;
-    --border-radius: 8px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  p {
-    font-size: 2em;
+  --color-primary: #2B2B2B;
+  --color-primary-alt: #fdf8ef;
+  --color-secondary-alt: #FDF999;
+  --color-secondary: #FF1BB1;
+  --color-background: #19473B;
+  --font-family: "Halant";
+  --font-weight-strong: 500;
+  --font-size-h1: 5rem;
+  --font-size-h2: 2.3rem;
+  --font-size-h3: 1.3rem;
+  --font-size-h4: 1.35rem;
+  --font-size-text: 13px;
+  --border-radius: 8px;
 }
 
-body {
-    font-family: Montserrat, sans-serif;  
-    padding: 0;        
-    box-sizing: border-box;
-    background-color: var(--color-background);
+* {
+  box-sizing: border-box;
 }
 
+#whowasisabella {
+  background-color: var(--color-primary-alt);
+}
+#themuseum {
+  background-color: #fffdbd;
+}
+
+
+#robberynight {
+  background-color: var(--color-primary);
+  color: var(--color-primary-alt);
+}
+
+#robberynight blockquote{
+  background-color: var(--color-primary-alt);
+  max-width: 50ch;
+  color: var(--color-primary);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+p,  blockquote, ul, h4 {
+  font-family: 'Halant';
+  font-weight: 400;
+  
+  font-size: 1rem;
+  text-align: start;
+  
+}
 h1 {
-    font-family: CinzelDecorative-Bold;
-    color: var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: white;
+  margin: 1em auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.05em;
+  text-transform:uppercase;
+  padding: 1em;
+  
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  padding-top: 1em ;
+  font-size: 2.3rem;
+  margin-bottom: .5em;
+  
 }
 
-.logo p {
-    font-family: CinzelDecorative;
-    color: var(--color-primary-alt);
-    padding-bottom: 1em;
-    border-bottom: var(--color-primary-alt) 1px solid;
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: .5em 0em;
 }
 
-.instructions {
-    color: var(--color-primary-alt);
+blockquote {
+  background-color: var(--color-secondary);
+  color: white;
+  margin: 1em auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.05em;
+  text-transform: normal;
+  padding: 1em;
+  max-width: 30ch;
 }
+
+#themuseum blockquote{
+  background-color: var(--color-primary);
+  max-width: 50ch;
+}
+
+#themuseum h4{
+  font-style: italic;
+  text-align: end;
+  margin: 2em;
+}
+
+h2 {
+  scroll-snap-type: y mandatory;
+}
+
+.themewrapper {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
-
-.paintingfacts {
-    display: flex;
-    align-items: center;
+* {
+  font-size: 20px;
+  margin: 0;
 }
 
-.paintingfactbox {
-    height: 100px;
-    width: 100px;
-    font-size: 2em;
-  padding: 20px;
-  background-color: var(--color-primary-alt);
-  text-align: center;
-  place-content: center;
-  width: 150px;
-
+@font-face {
+  font-family: Halant;
+  font-style: normal;
+  src: local("Halant"), url(/fonts/Halant-regular.ttf) format("truetype");
+}
+article {
+ 
 }
 
-#monalisafactbox {
-    color: red;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    justify-content: center;
+html {
+  scroll-snap-type: y mandatory;
 }
 
 
-
-
-.missing-card {
-    flex: 1 0 30%;      
-    max-width: 180px;                   
-    text-align: center;                  
-    cursor: pointer;                    
-    transition: transform 0.3s;
-    filter: drop-shadow(0 0 0.5rem #877b61); 
-    margin-bottom: 2em;      
-}
-
-.missing-card:hover {
-    transform: scale(1.05); 
-    filter: drop-shadow(0 0 0.75rem #c6b48b);             
-}
-
-.missing-card img {
-    width: 100%;                       
-}
-
-.begin-game {
-    text-align: center;
-}
-
-.begin-game button {
-    box-shadow: 0 0 0.5rem #ccb2b2; 
+section {
+  margin: 1em;
+  max-width: 80vw;
+  text-align: start;
 }
 
 
-@media (max-width: 800px) {
 
 
-    .info-panel button {
-        display: block;
-        margin: 10px auto 0;
-        padding: 10px 20px;
-        background-color: var(--color-secondary);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+
+nav {
+  width: 100vw;
+  height: 15vh;
+  background-color: pink;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+
+nav ul {
+  list-style-type: none;
+}
+
+.box {
+  display: block;
+  background-color: red;
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+
+.scroll-section {
+ 
+  scroll-snap-type: mandatory;
+  }
+ 
+
+  @media (min-width: 600px) {
+    section {
+      
+    }
+
+    .biogrid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+    }
+    .biogrid img{
+      max-width: 15em;
+      
     }
     
+    section {
+      margin: auto;
+      text-align: start;
+      padding: 1em 0em;
+    }
+    p {
+      margin: 1em;
+    }
 
 
-.info-panel nav {
-    text-align: left;
-    margin-left: 1em;
-}
+  }
 
-.info-panel nav h1{
-    font-size: 2rem;
-    margin-bottom: .1rem;
-
-}
-.info-panel nav p{
-    font-size: 1.2rem;
-    margin-top: .5rem;
-    font-family: CinzelDecorative;
-color: var(--color-primary-alt);
-}
-.back2home {
-border: 1px solid blue;
-width: 18em;
-text-align: center;
-margin: auto;
-margin-top: 0;
-}
-.info-grid img {
-max-width: 30em;
-}
-
-
-
-.info-grid div{
-    margin: 1em;
-}
-
-.info-grid {
-    
-    
-   
-}
-
-.info-grid .placard {
-    background-color: white;
-    font-size: 0.5rem;
+  
+  .anecdotegrid {
+    max-width: 30em;
     margin: auto;
-    max-width: 45em;
-    margin-top: 3em;
-    padding: 10px;
-}
-.info-grid .placard h2, .info-grid .placard h3 {
-    text-align: left;
-    font-size: 1rem;
-    line-height: .5em;
-    text-transform: uppercase;
-}
-
-.info-panel {
-    display: none; 
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    background-color: var(--color-background);
-    padding: 20px;
-    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
-    width: 100vw; 
-    height: 100vh;
-    text-align: center;
-    margin: 0;
-    }
-
-.info-grid .placard h2 {
-    font-weight: 600;
-}
-.info-grid .placard h3 {
-    font-weight: 400;
-}
-
-.info-grid .placard p {
-    font-weight: 400;
-    margin-top: 3em;
-    text-align: left;
-    font-size: .9rem;
-    font-family: Montserrat-Italic;
-}
-
-
-.info-grid .paintingfacts {
-    font-size: 0.5rem;
-    margin-bottom: 2em;
-}
-
-.info-grid .paintingfull {
-    max-width: 1em;
-
-}
-
-    html {
-        background-color: pink; 
-    }
-    .missing-card {
-            
-    }
-    .logo {
-        padding: 1rem;
-        display: block;
-        font-family: CinzelDecorative-Bold;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    .logo h1{
-        margin-bottom: 0;
-    }
-    .logo p {
-        margin-top: 0;
-        font-size: 1rem;
-    }
-    .instructions {
-        font-size: 1em;
-        margin: auto;
-        padding: 2em;
-        max-width: 50ch;
-        text-align: left;
-    }
-    .gallery {
-        display: flex;
-        width: 80vw;
-        flex-wrap: wrap;                              
-        gap: 15px;                           
-        margin: auto;
-        
-    }
-
-
-
-
-
-
-
-
-}
-
-@media (min-width: 800px) {
     
-    
-    .info h1 {
-        padding: 0rem;
-        display: block;
-        text-align: left; 
-        font-family: CinzelDecorative-Bold;
-        font-size: 4rem;
-        max-width: 5ch;
-        margin-bottom: 0;
-    }
+  }
+  .anecdote {
+    display: flex;
+    max-height: 500px;
+    transition: ease-in-out;
+  }
 
-    .logo p {
-        font-size: 1em;
-        border-bottom: var(--color-primary-alt) 1px solid;
-        padding-bottom: 1em;
-        
-    }
-    
-    
-    html {
-        margin-left: 3rem;
-    }
+.anecdote img {
+  max-width: 10em;
+}
 
-    .main {
-        display: flex;
-        
-        margin: 4rem 4rem 2rem 2rem;
-        height: 80vh;
-        justify-content: space-between;
-    }
+.anecdotegrid blockquote {
+  font-size: 1em;
+  text-justify: center;
+  margin: 1em auto auto auto;
+  background-color: white;
+  color: var(--color-primary);
+  text-transform: none;
+}
 
-    .logo p {
-        
-        font-size: 1.2rem;
-    }
-    .instructions {
-        font-size: .8rem;
-        max-width: 20rem;
-    }
-   
-    
 
-    .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;                    
-        justify-content: left;              
-        gap: 25px;                           
-        margin: auto;
-        padding: 0px 40px; 
-    }
-    
-       
 
-.info-panel button {
-            display: block;
-            margin: 10px auto 0;
-            padding: 10px 20px;
-            background-color: var(--color-secondary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+.anecdotegrid .leftquote {
+  border: .8px solid var(--color-primary);
+  border-radius: 15px 15px 15px 1px;
+}
+.anecdotegrid .rightquote {
+  border: .8px solid var(--color-primary);
+  border-radius: 15px 15px 1px 15px;
+}
+.anecdotegrid .anecdote {
+  transition: transform 0.3s;
+}
+.anecdotegrid .anecdote:hover {
+  margin: auto;
+  transform: scale(1.1);
+ 
+}
+
+.anecdotegrid p {
+  font-size: .8em;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  text-transform: none;
+}
+
+.globegrid {
+  
+}
+
+    #globe {
+      width: 4em;
+      float: left;
+    }
+      @keyframes spin {
+        to {
+          transform: rotateY(18turn);
         }
-        
-    .info-panel {
-    display: none; 
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    background-color: var(--color-background);
-    padding: 20px;
-    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
-    width: 100vw; 
-    height: 100vh;
-    text-align: center;
-    }
-
-    .info-panel nav {
-        text-align: left;
-        margin-left: 1em;
-    }
-
-   .info-panel nav h1{
-        font-size: 2rem;
-        margin-bottom: .1rem;
-
-    }
-    .info-panel nav p{
-        font-size: 1.2rem;
-        margin-top: .5rem;
-        font-family: CinzelDecorative;
-    color: var(--color-primary-alt);
-    }
-.back2home {
-    border: 1px solid blue;
-    width: 18em;
-}
-    .info-grid img {
-    max-width: 22em;
+      }
+      
+      @media (prefers-reduced-motion: no-preference) {
+        #globe {
+          animation: spin 5s ease infinite;
+        }
+      }
+      
+      @layer demo.support {
+        #globe {
+          /* center the star in the div */
+          display: grid;
+          place-content: center;
+        }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: scroll()) {
+          #globe {
+            animation: spin linear both;
+            animation-timeline: scroll();
+          } 
+        }
+      }
     
-    }
-
-    .info-grid .paintingfull {
-        grid-row: 1 / span 2;
-
-    }
-
-    .info-grid div{
-        margin: 1em;
-    }
-
-    .info-grid {
+      .courtyardcontainer {
+        max-width: 20em;
         
+      }
+      .sliderinstruct1 {
+        padding: 1em;
+        font-size: .9em;
+      font-style: italic;
+      
+      }
+      
+      #comparison {
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden; 
+        position: relative;
+        margin-right: 0;
+        padding-right: 0;
+      }
+      .comparisongrid {
         display: grid;
-        gap: 3em;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-auto-flow: column;
+        grid-template-columns: 2fr 3fr;
         border: 1px solid pink;
+        width: 70vw;
+        margin: 2em ;
+        align-items: center;
+      }
+      
+      figure { 
+        position: absolute;
+        background-image: url('/images/beforeafter/2.png');
+        background-size: cover;
+        font-size: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0; 
+      }
+      
+      #divisor { 
+        background-image: url('/images/beforeafter/1.png');
+        background-size: cover;
+        position: absolute;
+        width: 50%; 
+        box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+        bottom: 0; height: 100%;
+        
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          right: -2px;
+          width: 4px;
+          height: calc(50% - 25px);
+          background: white;
+          z-index: 3;
+        }
+        &::before {
+          top: 0;
+          box-shadow: 0 -3px 8px 1px rgba(0,0,0,.3);
+        }
+        &::after {
+          bottom: 0;
+          box-shadow: 0 3px 8px 1px rgba(0,0,0,.3);
+        }
+      }
+      #handle {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 1;
+        
+        &::before,
+        &::after {
+          content: '';
+          width: 0;
+          height: 0;
+          border: 6px inset transparent;
+          position: absolute;
+          top: 50%;
+          margin-top: -6px;
+        }
+        &::before {
+          border-right: 6px solid white;
+          left: 50%;
+          margin-left: -17px;
+        }
+        &::after {
+          border-left: 6px solid white;
+          right: 50%;
+          margin-right: -17px;
+        }
+      }
+      
+      input[type=range]{
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        position: absolute;
+        top: 50%; left: -25px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        width: calc(100% + 50px); 
+        z-index: 2;
+        
+        &:focus,
+        &:active {
+          border: none;
+          outline: none;
+        }
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: transparent;
+        border: 4px solid white;
+        box-shadow: 0 0 8px 1px rgba(0,0,0,.3);
+      }
+      input[type=range]::-moz-range-track {
+        -moz-appearance:none;
+        height:15px;
+        width: 100%;
+        background-color: transparent; 
+        position: relative;
+        outline: none;    
+      }
+
+
+      #alarm-button {
+        background-color: #FF1BB1;
+        padding: 1.5em;
+        border-radius: 150px;
         margin: auto;
-        margin-top: 1em;
-    }
+        border: 1px solid white;
+        transition: ease-in-out;
+      }
 
-    .info-grid .placard {
-        background-color: white;
-        font-size: 0.5rem;
-        max-height: 18em;
-        max-width: 45em;
-        margin-top: 3em;
-        padding: 10px;
-    }
-    .info-grid .placard h2, .info-grid .placard h3 {
-        text-align: left;
-        font-size: 1rem;
-        line-height: .5em;
+      #alarm-button:hover {
+        transform: scale(1.1);
+      }
+
+      #alarm-button p {
+        color: var(--color-primary-alt);
         text-transform: uppercase;
-    }
+        text-align: center;
+        width: 5em;
+        height: 5em;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+
+     
+      
+      #alarm-overlay {
+        position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  backdrop-filter: invert(1);
+  display: none; 
+  z-index: 1000;
+      }
+     
+
+      .svg-container {
+        position: absolute;
+        background-image: url(/images/museummap.png);
+background-size: cover;
+border: 1px solid red; 
+       width: 50vw;
+       margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      svg {
+        height: 100%;
+        margin: auto;
+      }
+      .bigspacer {
+        height: 25em;
+      }
+
+
+
     
-
-    .info-grid .placard h2 {
-        font-weight: 600;
-    }
-    .info-grid .placard h3 {
-        font-weight: 400;
-    }
-
-    .info-grid .placard p {
-        font-weight: 400;
-        margin-top: 3em;
-        text-align: left;
-        font-size: .9rem;
-        font-family: Montserrat-Italic;
-    }
-
-
-    .info-grid .paintingfacts {
-        font-size: 0.5rem;
-        margin-bottom: 2em;
-    }
-
-}
+      .divider {
+          border-top: 2px solid #140D1A;
+      }
+      
+      .damagecounter {
+          display: flex;
+        justify-items: center;
+          align-items: center;
+          border: 1px solid red;  
+          margin: auto;
+      }

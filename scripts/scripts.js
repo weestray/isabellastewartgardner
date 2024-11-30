@@ -1,72 +1,116 @@
-/* WRITE YOUR JS HERE... YOU MAY REQUIRE MORE THAN ONE JS FILE. IF SO SAVE IT SEPARATELY IN THE SCRIPTS DIRECTORY */
-function showInfo(paintingId) {
 
-    const panels = document.querySelectorAll('.info-panel');
-    panels.forEach(panel => panel.style.display = 'none');
-    
+gsap.registerPlugin(ScrollTrigger);
 
-    const panel = document.getElementById(paintingId);
-    if (panel) {
-        panel.style.display = 'block';
-        document.querySelector('.overlay').style.display = 'block'; // Show overlay
-    }
+var divisor = document.getElementById("divisor"),
+    handle = document.getElementById("handle"),
+    slider = document.getElementById("slider");
+
+function moveDivisor() {
+  handle.style.left = slider.value+"%";
+	divisor.style.width = slider.value+"%";
 }
 
-function closeInfo() {
-
-    const panels = document.querySelectorAll('.info-panel');
-    panels.forEach(panel => panel.style.display = 'none');
-    document.querySelector('.overlay').style.display = 'none';
-}
+window.onload = function() {
+	moveDivisor();
+};
 
 
-
-const monalisafactbox = document.getElementById('monalisafactbox');
-const leftButton = document.getElementById('leftButton');
-const rightButton = document.getElementById('rightButton');
-const monalisafacts = [
-`Before its theft in 1911, the Mona Lisa was well-regarded but not the global icon it is today. The heist made headlines worldwide and transformed the painting into a cultural treasure.`, 
-`Thief Vincenzo Peruggia, a former Louvre employee, disguised himself as a worker, hid in a storage closet overnight, and walked out with the painting under his apron.`, 
-`When the painting was first discovered missing, museum staff assumed it had been taken to be photographed or cleaned. It wasn’t until the next day that they realized it had been stolen.`, 
-`Pablo Picasso and his friend Guillaume Apollinaire were briefly questioned due to their known criticism of the Louvre.`, 
-`Peruggia was eventually caught when he tried to sell the painting two years later. As for his motive, he claimed to have stolen the painting as an act of patriotism, as he believed the Mona Lisa belonged in Italy, though it had been legally acquired by France centuries earlier.`];
+const alarmButton = document.getElementById("alarm-button");
+const alarmOverlay = document.createElement("div");
+const hiddenParagraph = document.getElementById("hidden-paragraph");
 
 
+alarmOverlay.id = "alarm-overlay";
+document.body.appendChild(alarmOverlay);
 
 
+hiddenParagraph.hidden = true;
 
-let currentIndex = 0;
 
-function updatemonalisafact() {
-  monalisafactbox.textContent = monalisafacts[currentIndex];
+alarmButton.addEventListener("click", () => {
+  let flashCount = 0;
+  alarmOverlay.style.display = "block"; 
+
   
-  if (currentIndex === 0) {
-    leftButton.disabled = true;
-  } else {
-    leftButton.disabled = false;
-  }
+  const flashInterval = setInterval(() => {
+    alarmOverlay.style.display =
+      alarmOverlay.style.display === "block" ? "none" : "block";
+    flashCount++;
 
+    if (flashCount >= 10) {
+      clearInterval(flashInterval);
+      alarmOverlay.style.display = "none"; 
 
-  if (currentIndex === monalisafacts.length - 1) {
-    rightButton.disabled = true;
-  } else {
-    rightButton.disabled = false;
-  }
-}
-
-leftButton.addEventListener('click', function() {
-  if (currentIndex > 0) {
-    currentIndex--; 
-    updatemonalisafact();
-  }
-});
-
-rightButton.addEventListener('click', function() {
-  if (currentIndex < monalisafacts.length - 1) {
-    currentIndex++; 
-    updatemonalisafact();
-  }
+      hiddenParagraph.hidden = false;
+    }
+  }, 500); 
 });
 
 
-updatemonalisafact();
+
+let svg = document.querySelector("svg");
+let path = svg.querySelector("path");
+
+const pathLength = path.getTotalLength()
+console.log(pathLength);
+gsap.set(path , {strokeDasharray: pathLength});
+gsap.fromTo(
+  path,
+  {
+    strokeDashoffset: pathLength,
+  },
+  {
+    strokeDashoffset:0,
+    duration: 10,
+  
+    scrollTrigger:{
+      trigger: ".svg-container",
+      start: "top 200px",
+      end: "top 100px",
+    scrub: 1,
+    }
+  }
+)
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+/*gsap.to('#globe', { 
+  scrollTrigger: '#globe',
+    duration: .4,
+    scaleX: -1,
+    repeat: 8,
+    yoyo: true
+  });
+
+
+
+gsap.to(".box", {
+});*/ 
+
+
+/*
+const quoters = document.querySelectorAll('.quoter');
+
+quoters.forEach((quoter) => {
+ 
+  const quoteId = quoter.dataset.quote;
+  const quoteElement = document.getElementById(quoteId);
+
+
+  const showQuote = () => {
+    quoteElement.style.display = 'block';
+  };
+
+  
+  const hideQuote = () => {
+    quoteElement.style.display = 'none';
+  };
+
+
+  quoter.addEventListener('mouseover', showQuote);
+  quoter.addEventListener('mouseout', hideQuote);
+});
+
+*/

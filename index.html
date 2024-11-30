@@ -1,109 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- PUT A TITLE IN HERE -->
-    <title>Stolen Art Gallery</title>
-    <!-- PUT A DESCRIPTION IN HERE -->
-    <meta name="description" content="describe content of the page here...." />
-    <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
-    <link rel="stylesheet" href="styles.normalize.css" />
-    <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
-    <!-- LINK TO YOUR STYLES -->
-    <link rel="stylesheet" href="styles/styles.css" />
-    <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
-    <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
-    <script src="scripts/scripts.js" defer></script>
-  </head>
-  <body>
-    <div class="main">
-    <div class="info">
-      <div class="logo">
-      <h1> Heist & Seek</h1>
-      <p>The gallery of stolen art</p>
-    </div>
-    <p class="instructions">gameplay instructions blah blah blah Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, distinctio n</p>
-    </div>
-<div class="gallery">
-    <div class="missing-card" onclick="showInfo('monalisa')">
-        <img src="images/monalisa-missing.png" alt="Mona Lisa">
-    </div>
-    <div class="missing-card" onclick="showInfo('fort')">
-        <img src="images/fort-missing.png" alt="fort">
-    </div>
-    <div class="missing-card" onclick="showInfo('storm')">
-        <img src="images/storm-missing.png" alt="storm">
-    </div>
-    <div class="missing-card" onclick="showInfo('poppy')">
-        <img src="images/poppy-missing.png" alt="poppy">
-    </div>
-    <div class="missing-card" onclick="showInfo('pigeon')">
-        <img src="images/pigeon-missing.png" alt="pigeon">
-    </div>
-    <div class="missing-card" onclick="showInfo('scream')">
-        <img src="images/scream-missing.png" alt="scream">
-    </div>
-</div>
-</div>
-
-<div class="info-panel" id="monalisa">
-    <nav> 
-        <div class="back2home">
-        <a href="index.html">
-        <h1>   Heist & Seek</h1>
-      <p>The gallery of stolen art</p>
-        </a>
-    </div>
-    </nav>
-    <div class="info-grid">
-    <div class="paintingfull">
-        <img src="images/monalisa.png" alt="the mona lisa">
-    </div>
-    <div class="placard">
-        <h2>Mona Lisa</h2>
-        <h3>Vincent Van Gogh, 1503</h3>
-        <p>Stolen from: The Louvre, 1982 <br> CUrrent location: the louvre</p>
-    </div>
-    <div class="paintingfacts">
-        <button class="button" id="leftButton">◀</button>
-    <div class="paintingfactbox" id="monalisafactbox"></div>
-    <button class="button" id="rightButton">▶</button>
-  </div>
-</div> 
-<button onclick="closeInfo()">Close</button>
-    </div>
-
-
-<div class="info-panel" id="poppy">
-    <div class="painting"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script defer src="scripts/"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap');
+      </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-section">
     
-    <h2>Van Gogh's Sunflowers</h2>
-    <p><strong>Date Stolen:</strong> 1991</p>
-    <p><strong>Location:</strong> Van Gogh Museum, Amsterdam</p>
-    <p><strong>Story:</strong> Thieves broke in and stole 20 paintings, including 'Sunflowers'. They were recovered in a car trunk nearby.</p>
-    <button onclick="closeInfo()">Close</button>
-</div>
+    </div>
+  </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href=""></a></li>
+    </ul>
+  </nav>
+  <article>
+    <div class="theme-wrapper" >
+      <div id="whowasisabella">
+        <section>
+        <h2 id="biosectionlink">I. WHO WAS ISABELLA STEWART GARDNER? </h2>
+        
+          <p>Isabella Stewart Gardner was a Boston heiress, philanthropist, and patron of the arts renowned for her bold sense of style and unconventional behavior, which included:</p>
+        <div class="biogrid">
+          <ul>
+            <li>smoking cigarettes in public</li>
+            <li>showing up to the Boston Symphony Orchestra bearing a headband that declared, “Oh you Red Sox.” 
+            </li>
+            <li>inviting the Harvard Football team to her home after they beat Yale
+            </li>
+            <li>hosting a boxing match at her home and dancing while the men fought
+            </li>
+            <li>taking a toothless zoo lion on a stroll through a park</li>
+          </ul>
 
-<div class="info-panel" id="portrait">
-    <h2>Rembrandt's Storm on the Sea of Galilee</h2>
-    <p><strong>Date Stolen:</strong> 1990</p>
-    <p><strong>Location:</strong> Isabella Stewart Gardner Museum, Boston</p>
-    <p><strong>Story:</strong> Thieves dressed as police officers took 13 pieces of art, including this painting. It remains missing.</p>
-    <button onclick="closeInfo()">Close</button>
-</div>
+        <img id="isabellaportrait" src="/images/portrait1.png" alt="">
+        </div>
+        <p>(the gossip columns LOVED her.)</p>
+        </section>
+        <section> <p>
+          she once remarked, in response to gossip about her:</p>
+          <blockquote>
+            “Don’t spoil a good story by telling the truth.”
+          </blockquote>
+         <p>She was known for her love of literature, art, travels, and -- of course -- for her money. </p> </section>
+        <section>
+          <h3>Isabella, according to others.</h3>
+        <div class="anecdotegrid">
 
-<div class="overlay" onclick="closeInfo()"></div>
+          <div class="anecdote">
+            <div class="quoter">
+              <img src="images/quoters/4.png" alt="">
+              <p> John Jay Chapman, essayist</p>
+            </div>
+            <blockquote class="leftquote">“A fairy in a machine shop.”
+            </blockquote>
+          </div>
+          <div class="anecdote">
+            <blockquote class="rightquote">“[Isabella] is not a woman, she is a locomotive—with a Pullman car attached.”
+            </blockquote>
+            <div class="quoter">
+              <img src="images/quoters/5.png" alt="">
+              <p> Henry James, novelist</p>
+            </div>
+          </div>
+
+          <div class="anecdote">
+            <div class="quoter">
+              <img src="images/quoters/3.png" alt="">
+              <p> Bernard Berenson, Isabella’s art advisor</p>
+            </div>
+            <blockquote class="leftquote">“She lives at a rate and intensity, with a reality that makes other lives seem pale, thin and shadowy.”
+            </blockquote>
+          </div>
+        </div>
+        </section>
+        <section>
+          <div class="globegrid">
+            <p>Isabella’s passion for collecting art began in the 1880s, sparked during extensive travels abroad with her husband, Jack. 
+            </p>
+            <img src="/images/globe.png" alt="globe" id="globe">
+            <p>One of her first acquisitions was The Concert by Vermeer (c. 1664), purchased at a Paris auction house in 1892.</p>
+            <p>Isabella and Jack’s art collection soon outgrew their house in Beacon Hill. The couple decided to establish a gallery. However, Jack’s sudden death in 1898 left Isabella to carry their vision forward alone.</p>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
 
 
 
-<div class="begin-game">
-    <button onclick="begin-game()">Begin game</button>
-</div>
 
+    <div class="theme-wrapper" id ="themuseum">
+    <div id ="themuseum">
+       <section>
+        <h2 id="museumsectionlink">II. The Museum </h2>
+        <p>With the help of local architect Willard T. Sears, Isabella’s museum -- modeled on the Renaissance palaces of Venice -- began construction in 1901.
+        </p>
+        <div class="comparisongrid">
+          <p class="sliderinstruct1"> Drag the slider to the left to see Sears's vision come to life.</p>
+          <div class="courtyardcontainer">
+            <div id="comparison">
+              <figure>
+                <div id="handle"></div>
+                <div id="divisor"></div>
+              </figure>
+              <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
+            </div>
+           </div>
+         
+         </div>
+          <p>In 1901 and 1902, Isabella installed her collection of paintings, sculptures, tapestries, furniture, manuscripts, rare books, and decorative arts. She continued to acquire works and change the installations for the rest of her life.</p>
+        </div>
+      </section>
+      <section>
+        <p>She supervised every aspect of the museum’s construction and design, ensuring it reflected her taste. At the time, her museum  was the largest collection of art by a private individual in America.
+        </p>
+        <p>She was incredibly particular about her museum; before it formally opened, she invited (blind) students from the Perkins School for the Blind to test the acoustics of a music room to preserve the secrecy.
+        </p>
+        <blockquote>
+          Gardner acquired and arranged each piece of art in the museum and then put it in writing that if anyone were to move anything, the museum would have to give everything to the MFA and shut down permanently.
+        </blockquote>
+        <p>
+          The museum opened on January 1, 1903, with a celebration featuring champagne, donuts, and the Boston Symphony Orchestra.
+Gardner mandated that it be free of charge, hoping to draw all of Boston. 
+        </p>
+      
+        <p>Isabella filled her museum with artists, performers, and scholars. She was a dedicated patron of the arts and organized lectures, concerts, and exhibitions. </p>
+        <p>A champion of artists and intellectuals, Gardner surrounded herself with creative minds, many of whom were gay—an affinity that some interpret as early advocacy for LGBTQ rights.</p>
+        <p>She passed away in 1924, leaving the museum “for the education and enjoyment of the public forever.” </p>
+        <h4>It would be foolish to assume that the story ends here. </h4>
+      </section>
+      </div>
   
+
+
+<div class="theme-wrapper" id="robberynight">
+  <section class="scroll-section">
+          <h2> III. Sunday, March 18, 1990 </h2>
+          <p>At 1:20 a.m., a vehicle pulled up by the side entrance of the museum.
+          </p>
+          <p>Two men in police uniforms rang the buzzer, connecting them to a security guard, 23-year-old Rick Abath. Through the intercom, they explained that they were investigating a disturbance and must be admitted into the museum.
+          </p>
+          <p>Abath buzzed them in.</p>
+          <p>Within minutes, the “officers” had handcuffed Abath and the only other night guard. It is then that they said: </p>
+        <blockquote>“Gentlemen, this is a robbery.”</blockquote>
+    
+          <button id="alarm-button"> <p>press to sound alarm</p></button>
+           <div id="alarm-overlay"></div>
+          <p id="hidden-paragraph" hidden>Unfortunately, the two guards were unable to notify authorities due to the fact that the thieves wrapped duct tape around the guards’ heads and tied them up in the basement of the museum.</p>
+          <p>Next, the thieves made their way through the museum.</p>
+          
+  </section>
+  <section class="scroll-section">
+    <div id="scrollmap"> 
+    
+        <div class="svg-container">
+        <?xml version="1.0" encoding="UTF-8"?>
+      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 625.83 482.04">
+        <defs>
+          <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e54097;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+        </style>
+        </defs>
+        <path class="cls-1" d="M482.4,467.69l-40.15-97.41c-2.96-3.77-9.29-10.65-17.9-11.01-7.51-.31-12.96,4.49-20.77,11.01-12,10.01-25.88,20.96-31.57,24.98-9.29,6.56-23.52,9.95-51.98,16.72-30.67,7.3-41.26,7.1-50.89,17.81-8.04,8.94-3.61,12.36-11.63,19.63-14.22,12.89-39.39,12.33-54.53,12-3.48-.08-5.89-.27-10.18,0-13.62.85-22.94,4.87-29.44,7.27-16.74,6.18-31,7.58-42.53,8.72-20.65,2.04-33,3.26-37.62-3.26-7.46-10.53,7.45-38.18,28.62-54,18.25-13.64,35.75-14.45,57.78-17.82,41.9-6.41,26.55-10.8,115.03-34.02,35.59-9.34,69.97-23.17,105.85-31.32,5.97-1.36,22.9-5.12,37.26-18.9,2.44-2.35,23.84-23.35,17.82-40.5-2.31-6.58-15.61-12.76-42.12-24.84-15.95-7.27-24.03-10.9-29.16-10.8-12.31.24-18.58,6.66-37.8,7.02-5.17.1-9.23-.28-11.88-.54-19.95-1.93-22.54-7.32-33.48-5.94-10.89,1.37-14.03,7.43-19.98,4.86-5.24-2.26-9.22-9.73-7.56-15.12,2.47-8.01,16.68-9.26,39.96-12.96,17.92-2.85,35.47-7.91,53.46-10.26,72.34-9.46,93.41-27.49,170.11-38.34,20.2-2.86,39.76-9.42,59.94-12.42,18.59-2.77,31.61-3.69,35.1-11.88,2.32-5.44-1.42-9.72-10.8-28.08-15.31-29.97-24.3-51.84-24.3-51.84-3.61-8.39-6.82-16.36-13.46-17.64-3.72-.72-8.85.82-11.13,4.4-3.64,5.73,1.4,15.04,6.37,24.2,2.18,4.03,4.11,6.81,4.25,7.01,10.62,15.33,31.36,54.07,23.24,61.21-.37.33-1.42.63-3.5,1.21-7.62,2.14-11.43,3.21-19.31,4.02-18.6,1.92-36.68,7.34-55.06,10.79-166.01,31.1-265.45,59.3-265.45,59.3-118.78,33.67-142.92,54.64-171.3,35.81-16.48-10.93-22.98-27.71-48.94-131.91C20.54,75.74,10.53,33.53,2.92.68"/>
+        </svg>
+    </div>
+  </section>         
+  <section id="scroll-section">
+    <div class="bigspacer"></div>
+  </section>
+  <section id="scroll-section">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolore in praesentium fuga exercitationem. Porro culpa, quod nihil tempora iusto et modi ullam odit ab laborum eius reprehenderit blanditiis veniam.</p>
+
+  </section>
+  <section id="scroll-section">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolore in praesentium fuga exercitationem. Porro culpa, quod nihil tempora iusto et modi ullam odit ab laborum eius reprehenderit blanditiis veniam.</p>
+
+  </section>
+
+<section class="damagecounter" id="fast-facts" style="opacity: 1; transform: translate(0px, 0px);">
+  <div class="damagecontainer">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <h1 class="animCounter">110000</h1>
+        <div class="divider divider-orchid mb-2"></div>
+        <span class="super-lead-text">We provide more than 110,000 clients with a funding solution each year.</span>
+      </div>
+      <div class="col-12 col-sm-4">
+        <h1 class="animCounter">1000</h1>
+        <div class="divider divider-orchid mb-2"></div>
+        <span class="super-lead-text">Over 1,000 insurance brokers choose to partner with us.</span>
+      </div>
+      <div class="col-12 col-sm-4">
+        <h1 class="animCounter">60</h1>
+        <div class="divider divider-orchid mb-2"></div>
+        <span class="super-lead-text">We have over 60 yrs combined experience in supporting Australian businesses &amp; clients.</span>
+      </div>
+    </div>
+  </div>
+  </section>
+
+</div>
+
+<div class="theme-wrapper" id="theaftermath">
+  <h1>The Aftermath</h1>
+
+
+  </article>
+
+     
+    
   
-  </body>
-  <script src="scripts/"></script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/scripts/gsap.min.js"></script>
+    <script src="/scripts/ScrollTrigger.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        
+      });
+    </script>
+    <script src="/scripts/scripts.js"></script>
+</body>
 </html>

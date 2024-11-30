@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PUT A TITLE IN HERE -->
+    <title>Stolen Art Gallery</title>
+    <!-- PUT A DESCRIPTION IN HERE -->
+    <meta name="description" content="describe content of the page here...." />
+    <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
+    <link rel="stylesheet" href="styles.normalize.css" />
+    <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
+    <!-- LINK TO YOUR STYLES -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+    <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
+    <script src="scripts/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+    <div class="info">
+      <div class="logo">
+      <h1> Heist & Seek</h1>
+      <p>The gallery of stolen art</p>
+    </div>
+    <p class="instructions">gameplay instructions blah blah blah Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, distinctio n</p>
+    </div>
+<div class="gallery">
+    <div class="missing-card" onclick="showInfo('monalisa')">
+        <img src="images/monalisa-missing.png" alt="Mona Lisa">
+    </div>
+    <div class="missing-card" onclick="showInfo('fort')">
+        <img src="images/fort-missing.png" alt="fort">
+    </div>
+    <div class="missing-card" onclick="showInfo('storm')">
+        <img src="images/storm-missing.png" alt="storm">
+    </div>
+    <div class="missing-card" onclick="showInfo('poppy')">
+        <img src="images/poppy-missing.png" alt="poppy">
+    </div>
+    <div class="missing-card" onclick="showInfo('pigeon')">
+        <img src="images/pigeon-missing.png" alt="pigeon">
+    </div>
+    <div class="missing-card" onclick="showInfo('scream')">
+        <img src="images/scream-missing.png" alt="scream">
+    </div>
+</div>
+</div>
+
+<div class="info-panel" id="monalisa">
+    <nav> 
+        <div class="back2home">
+        <a href="index.html">
+        <h1>   Heist & Seek</h1>
+      <p>The gallery of stolen art</p>
+        </a>
+    </div>
+    </nav>
+    <div class="info-grid">
+    <div class="paintingfull">
+        <img src="images/monalisa.png" alt="the mona lisa">
+    </div>
+    <div class="placard">
+        <h2>Mona Lisa</h2>
+        <h3>Vincent Van Gogh, 1503</h3>
+        <p>Stolen from: The Louvre, 1982 <br> CUrrent location: the louvre</p>
+    </div>
+    <div class="paintingfacts">
+        <button class="button" id="leftButton">◀</button>
+    <div class="paintingfactbox" id="monalisafactbox"></div>
+    <button class="button" id="rightButton">▶</button>
+  </div>
+</div> 
+<button onclick="closeInfo()">Close</button>
+    </div>
+
+<div class="info-panel" id="poppy">
+    <nav> 
+        <div class="back2home">
+        <a href="index.html">
+        <h1>   Heist & Seek</h1>
+      <p>The gallery of stolen art</p>
+        </a>
+    </div>
+    </nav>
+    <div class="info-grid">
+    <div class="paintingfull">
+        <img src="images/poppy.png" alt="poppy">
+    </div>
+    <div class="placard">
+        <h2>Poppy Flowers</h2>
+        <h3>Vincent Van Gogh, 1887     </h3>
+        <p>Stolen from: Mohamed Mahmoud Khalil Museum (Cairo, Egypt)... TWICE! Once in 1977, then again in August 2010
+            <br> Current location: ???    </p>
+    </div>
+    <div class="paintingfacts">
+        <button class="button" id="leftButton">◀</button>
+    <div class="paintingfactbox" id="poppyfactbox"></div>
+    <button class="button" id="rightButton">▶</button>
+  </div>
+</div> 
+<button onclick="closeInfo()">Close</button>
+    </div>
+
+<div class="info-panel" id="fort">
+    <nav> 
+        <div class="back2home">
+        <a href="index.html">
+        <h1>   Heist & Seek</h1>
+      <p>The gallery of stolen art</p>
+        </a>
+    </div>
+    </nav>
+    <div class="info-grid">
+    <div class="paintingfull">
+        <img src="images/fort.png" alt="fort">
+    </div>
+    <div class="placard">
+        <h2>Fortifications of Paris with Houses</h2>
+        <h3>Vincent van Gogh, 1887</h3>
+        <p>Stolen from: Whitworth Art Gallery (Manchester, UK) in 2003
+            <br>Currently at:  Whitworth Art Gallery (Manchester, UK)  </p>
+    </div>
+    <div class="paintingfacts">
+        <button class="button" id="leftButton">◀</button>
+    <div class="paintingfactbox" id="fortfactbox"></div>
+    <button class="button" id="rightButton">▶</button>
+  </div>
+</div> 
+<button onclick="closeInfo()">Close</button>
+    </div>
+
+
+<div class="info-panel" id="pigeon">
+        <nav> 
+            <div class="back2home">
+            <a href="index.html">
+            <h1>   Heist & Seek</h1>
+          <p>The gallery of stolen art</p>
+            </a>
+        </div>
+        </nav>
+        <div class="info-grid">
+        <div class="paintingfull">
+            <img src="images/pigeon.png" alt="pigeon">
+        </div>
+        <div class="placard">
+            <h2>Le pigeon aux petit pois (English: Pigeon with peas)</h2>
+            <h3>Pablo Picasso, 1911            </h3>
+            <p>Stolen from: Paris Museum of Modern Ar (Paris, FR) in 2010
+                <br>Current location: ???</p>
+        </div>
+        <div class="paintingfacts">
+            <button class="button" id="leftButton">◀</button>
+        <div class="paintingfactbox" id="pigeonfactbox"></div>
+        <button class="button" id="rightButton">▶</button>
+      </div>
+    </div> 
+    <button onclick="closeInfo()">Close</button>
+        </div>
+
+        <div class="info-panel" id="storm">
+            <nav> 
+                <div class="back2home">
+                <a href="index.html">
+                <h1>   Heist & Seek</h1>
+              <p>The gallery of stolen art</p>
+                </a>
+            </div>
+            </nav>
+            <div class="info-grid">
+            <div class="paintingfull">
+                <img src="images/storm.png" alt="storm">
+            </div>
+            <div class="placard">
+                <h2>The Storm on the Sea of Galilee</h2>
+                <h3>Rembrandt van Rijn, 1933
+                </h3>
+                <p>Stolen from: Isabella Stewart Gardner Museum (Boston, MA)  in 1990
+                    <br>Current location: ????</p>
+            </div>
+            <div class="paintingfacts">
+                <button class="button" id="leftButton">◀</button>
+            <div class="paintingfactbox" id="stormfactbox"></div>
+            <button class="button" id="rightButton">▶</button>
+          </div>
+        </div> 
+        <button onclick="closeInfo()">Close</button>
+            </div>
+
+            <div class="info-panel" id="scream">
+                <nav> 
+                    <div class="back2home">
+                    <a href="index.html">
+                    <h1>   Heist & Seek</h1>
+                  <p>The gallery of stolen art</p>
+                    </a>
+                </div>
+                </nav>
+                <div class="info-grid">
+                <div class="paintingfull">
+                    <img src="images/scream.png" alt="scream">
+                </div>
+                <div class="placard">
+                    <h2>The Scream</h2>
+                    <h3>Edvard Munch
+                    </h3>
+    
+                    <p>Stolen from: The National Gallery (Oslo, Norway) in 1994, Munch Museum (Oslo, Norway) in 2004
+                        <br>Current location: 1 in national Gallery (Oslo), 2 in Munch Museum (Oslo), 1 in private collection</p>
+                </div>
+                <div class="paintingfacts">
+                    <button class="button" id="leftButton">◀</button>
+                <div class="paintingfactbox" id="screamfactbox"></div>
+                <button class="button" id="rightButton">▶</button>
+              </div>
+            </div> 
+            <button onclick="closeInfo()">Close</button>
+                </div>
+
+
+
+
+<div class="begin-game">
+    <button onclick="begin-game()">Begin game</button>
+</div>
+
+  
+  
+  </body>
+  <script src="scripts/"></script>
+</html>
