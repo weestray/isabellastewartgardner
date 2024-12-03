@@ -47,6 +47,28 @@ alarmButton.addEventListener("click", () => {
 });
 
 
+gsap.to("#minutesCount", { scrollTrigger: '#degas', innerText: 81, duration: 3, 
+  snap: {
+    innerText:3
+  } 
+  });
+
+  gsap.to("#paintingsCount", { scrollTrigger: '#degas', innerText: 13, duration: 3, 
+    snap: {
+      innerText:1
+    } 
+    });
+  
+    gsap.to("#moneyCount", { scrollTrigger: '#degas', innerText: 500, duration: 3, 
+      snap: {
+        innerText:5
+      } 
+      });
+
+      
+
+
+
 
 let svg = document.querySelector("svg");
 let path = svg.querySelector("path");
@@ -66,13 +88,58 @@ gsap.fromTo(
     scrollTrigger:{
       trigger: ".svg-container",
       start: "top 200px",
-      end: "top 100px",
+      end: "top top",
     scrub: 1,
     }
   }
 )
 
 gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+	scrollTrigger: {
+		trigger: "#hero",
+		start: "top top",
+		end: "bottom top",
+		scrub: true
+	}
+});
+
+gsap.utils.toArray(".parallax").forEach(layer => {
+	const depth = layer.dataset.depth;
+	const movement = -(layer.offsetHeight * depth)
+	tl.to(layer, {y: movement, ease: "none"}, 0)
+});
+
+
+
+gsap.to('#degas', {
+  scrollTrigger: '#stormsea', 
+  opacity: 0,
+  duration: 3,
+  delay: 2
+});
+
+gsap.to('#stormsea', {
+  scrollTrigger: '#cheztort', 
+  opacity: 0,
+  duration: 3,
+  delay: 2
+});
+
+gsap.to('#cheztort', {
+  scrollTrigger: '#concert', 
+  opacity: 0,
+  duration: 3,
+  delay: 2
+});
+
+gsap.to('#concert', {
+  scrollTrigger: '#concert', 
+  opacity: 0,
+  duration: 5,
+  delay: 3
+});
 
 
 
@@ -90,27 +157,3 @@ gsap.to(".box", {
 });*/ 
 
 
-/*
-const quoters = document.querySelectorAll('.quoter');
-
-quoters.forEach((quoter) => {
- 
-  const quoteId = quoter.dataset.quote;
-  const quoteElement = document.getElementById(quoteId);
-
-
-  const showQuote = () => {
-    quoteElement.style.display = 'block';
-  };
-
-  
-  const hideQuote = () => {
-    quoteElement.style.display = 'none';
-  };
-
-
-  quoter.addEventListener('mouseover', showQuote);
-  quoter.addEventListener('mouseout', hideQuote);
-});
-
-*/
