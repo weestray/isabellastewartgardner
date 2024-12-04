@@ -553,18 +553,18 @@ transition: transform 0.3s;
     }
     
     .layer-bg {
-      background-image: url('/images/headerpics/bg.png');
+      background-image: url('../images/headerpics/bg.png');
   
     }
     .layer-1 {
-      background-image: url('/images/headerpics/anotherlayer.png');
+      background-image: url('../images/headerpics/anotherlayer.png');
       background-position: left bottom;
     }
     .layer-2 {
-      background-image: url('/images/headerpics/isabella.png');
+      background-image: url('../images/headerpics/isabella.png');
     }
     .layer-3 {
-      background-image: url('/images/headerpics/cautiontape.png');
+      background-image: url('../images/headerpics/cautiontape.png');
       background-position: right bottom;
     }
     
@@ -773,7 +773,7 @@ transition: transform 0.3s;
       }
       #themuseum figure { 
         position: absolute;
-        background-image: url('/images/beforeafter/2.png');
+        background-image: url('../images/beforeafter/2.png');
         background-size: cover;
         font-size: 0;
         width: 100%;
@@ -782,7 +782,7 @@ transition: transform 0.3s;
       }
       
       #divisor { 
-        background-image: url('/images/beforeafter/1.png');
+        background-image: url('../images/beforeafter/1.png');
         background-size: cover;
         position: absolute;
         width: 50%; 
@@ -875,14 +875,16 @@ transition: transform 0.3s;
       }
 
 #alarmgrid {
-
+  margin: 1em;
+  
 }
       #alarm-button {
         background-color: #FF1BB1;
         padding: 1em;
         border-radius: 150px;
-        margin: auto;
+       
         float: right;
+        
         width: 7em;
         height: 7em;
         border: 1px solid white;
@@ -928,7 +930,7 @@ transition: transform 0.3s;
 
       .svg-container {
         
-        background-image: url('/images/museummap.jpeg');
+        background-image: url('../images/museummap.jpeg');
       background-size: cover;
   
        width: 30em;
@@ -965,7 +967,7 @@ transition: transform 0.3s;
       
       #suspectsketches {
         width: 20em;
-        background-image: url('images/headerpics/newspaper.png');
+        background-image: url('../images/headerpics/newspaper.png');
         padding: 1em;
         text-align: center;
         display: block;
@@ -1003,8 +1005,153 @@ transition: transform 0.3s;
 }
 
       
-      
+@keyframes randomAnswer {
+  0% { content: "..."; }
+  5% { content: 'the COM basement'; }
+  10% { content: 'The Charles River'; }
+  15% { content: 'on a yacht'; }
+  20% { content: 'a private collection'; }
+  25% { content: 'the white house'; }
+  30% { content: 'swiss bank vault'; }
+  35% { content: 'Outlook good'; }
+  40% { content: 'vegas hotel suite'; }
+  45% { content: 'allston, ma'; }
+  50% { content: 'Reply hazy try again'; }
+  55% { content: 'Ask again later'; }
+  60% { content: 'Better not tell you now'; }
+  65% { content: 'Cannot predict now'; }
+  70% { content: 'Focus and ask again'; }
+  75% { content: 'Do not count on it'; }
+  80% { content: 'My reply is no'; }
+  85% { content: 'My sources say no'; }
+  90% { content: 'Outlook not so good'; }
+  95% { content: 'Very doubtful'; }
+}
+/* https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+@keyframes shake2 {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
 
-  
-    
-  
+
+.eightball {
+  margin: auto;
+  width: 45em;
+  justify-items: center;
+}
+.eightball h1 {
+  margin: 0;
+}
+
+.eightball input {
+  display: none;
+}
+
+.eightball label {
+  display: block;
+	margin: 40px;
+	padding: 0;
+	height: 300px;
+	width: 300px;
+	background: radial-gradient(circle at 270px 100px, #555555, #000000);
+	border-radius: 50%;
+	box-sizing: border-box;
+	position: relative;
+	cursor: pointer;
+}
+
+.eightball input:not(:checked) + label {
+  transform: translate3d(0, 0, 0);
+  animation: shake 0.81s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.eightball input:checked + label {
+  transform: translate3d(0, 0, 0);
+  animation: shake2 0.81s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.eightball label::before {
+	content: '';
+	display: block;
+	width: 120px;
+	height: 120px;
+	background: #333;
+	border-radius: 50%;
+	margin: -60px 0 0 -60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	border: 1px solid #666;
+	box-shadow: inset 2px 2px 6px black;
+}
+
+.eightball p {
+	margin: -60px 0 0 -60px;
+	padding: 0;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.eightball p::before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 90px solid var(--color-secondary);
+	position: absolute;
+	top: 3px;
+	left: 11px;
+	z-index: -1;
+}
+
+.eightball p:first-child::before {
+	border-bottom: none;
+	border-top: 90px solid var(--color-secondary);
+	top: 30px;
+}
+
+.eightball p::after {
+  content: '';
+  animation: randomAnswer 1000ms steps(1, end) infinite;
+	flex: none;
+	width: 57px;
+	color: #ffffff;
+	text-align: center;
+	font: 600 14px sans-serif;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.eightball input:not(:checked) + label p:first-child,
+input:checked + label p:last-child {
+  transition: opacity 5s;
+	opacity: 0.8;
+}
+
+input:not(:checked) + label p:first-child::after,
+input:checked + label p:last-child::after {
+  animation-play-state: paused;
+  opacity: 1;
+}
+

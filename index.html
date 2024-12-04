@@ -156,11 +156,12 @@ Isabella filled her museum with artists, performers, and scholars. She was a ded
           <h2> III. Sunday, March 18, 1990 </h2>
           <div>
           <p>At 1:20 a.m., a vehicle pulled up by the side entrance of the museum.
+            <div id="alarmgrid">
+              <button id="alarm-button"> <p>press to sound alarm</p></button>
+               <div id="alarm-overlay"></div>
+              </div>
           </p>
-          <div id="alarmgrid">
-            <button id="alarm-button"> <p>press to sound alarm</p></button>
-             <div id="alarm-overlay"></div>
-            </div>
+         
           <p>Two men in police uniforms rang the buzzer, connecting them to a security guard, 23-year-old Rick Abath. Through the intercom, they explained that they were investigating a disturbance and must be admitted into the museum.
             Abath buzzed them in.
           </p>
@@ -372,6 +373,16 @@ Isabella filled her museum with artists, performers, and scholars. She was a ded
   </ol>
   <p>In 2013, the FBI announced that it had identified the two thieves with a “high degree of confidence”: George Reissfelder and Leonard DiMuzio, two associates of the late mobster Carmello Merlino. But these two passed away less than a year after the heist, so it's not like we can ask them what they did with the paintings.
   </p>
+ <figure>
+  <h3>Where is the missing art?</h3>
+  <div class="eightball"><input id="toggle" type="checkbox">
+  <label for="toggle">
+    <p></p><p></p>
+  </label>
+</div>
+<figcaption>Click the Magic 8-Ball to learn where the missing art is.</figcaption>
+</figure>
+  
   <p>The statute of limitations on all crimes related to the theft has expired, but that hasn't encouraged anyone to come forward. The museum even promises that "confidentiality is assured"!
   
   In recent years, the museum and FBI have continued to get tips. Many of those tips are from people who think they see the painting displayed in a Zillow listing – and they turn out to be reproductions – but you really never know. 
@@ -405,7 +416,7 @@ Isabella filled her museum with artists, performers, and scholars. She was a ded
     
   
 
-
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js">
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./scripts/gsap.min.js"></script>
     <script src="./scripts/ScrollTrigger.min.js"></script>
