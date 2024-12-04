@@ -553,18 +553,18 @@ transition: transform 0.3s;
     }
     
     .layer-bg {
-      background-image: url('../images/headerpics/bg.png');
+      background-image: url('./images/headerpics/bg.png');
   
     }
     .layer-1 {
-      background-image: url('../images/headerpics/anotherlayer.png');
+      background-image: url('./images/headerpics/anotherlayer.png');
       background-position: left bottom;
     }
     .layer-2 {
-      background-image: url('../images/headerpics/isabella.png');
+      background-image: url('./images/headerpics/isabella.png');
     }
     .layer-3 {
-      background-image: url('../images/headerpics/cautiontape.png');
+      background-image: url('.s/images/headerpics/cautiontape.png');
       background-position: right bottom;
     }
     
