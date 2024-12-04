@@ -113,7 +113,7 @@ gsap.utils.toArray(".parallax").forEach(layer => {
 	tl.to(layer, {y: movement, ease: "none"}, 0)
 });
 
-
+/*
 
 gsap.to('#degas', {
   scrollTrigger: '#stormsea', 
@@ -146,6 +146,6 @@ gsap.to('#concert', {
   delay: 3,
   yoyo: true
 });
-
+*/
 
 

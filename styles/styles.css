@@ -26,6 +26,21 @@
   box-sizing: border-box;
 }
 
+
+
+* {
+  font-size: 20px;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Halant;
+  font-style: normal;
+  src: local("Halant"), url(/fonts/Halant-regular.ttf) format("truetype");
+}
+
+/*themes*/
+
 #whowasisabella, #investigation {
   background-color: var(--color-primary-alt);
   color: var(--color-primary)
@@ -33,7 +48,6 @@
 #themuseum, #today {
   background-color: #fffdbd;
 }
-
 
 
 #robberynight, #learnmore {
@@ -62,24 +76,41 @@
     scroll-behavior: auto !important;
   }
 }
-#gossip {
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-font-style: italic;}
 
-p, blockquote, figcaption, ul, li, h4 {
+/*text arrangement*/
+
+p, blockquote, figcaption, ul, ol, h4 {
   font-family: 'Halant';
   font-weight: 400;
-  
+  max-width: 60ch;
   font-size: 1rem;
   text-align: start;
-  
+  margin: auto;
 }
+li {
+  font-family: 'Halant';
+  font-weight: 400;
+  max-width: 60ch;
+  font-size: 1rem;
+  text-align: start;
+
+}
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+p {
+  margin-top: 1em;
+}
+figure {
+  margin: 1.5em;
+}
+
 h1 {
   background-color: var(--color-primary);
   color: white;
-  width: 20em;
-  margin: auto;
+  max-width: 20em;
+
   text-align: center;
   font-weight: 500;
   font-size: 2em;
@@ -91,7 +122,9 @@ h2 {
   font-weight: 800;
   padding-top: 1em ;
   font-size: 2.3rem;
-  margin-bottom: .5em;
+ margin: auto;
+ text-align: center;
+ text-transform: uppercase;
   
 }
 
@@ -101,13 +134,13 @@ h3 {
   font-size: 1.2em;
   text-transform: uppercase;
   text-align: center;
-  margin: .5em 0em;
+ margin: 1em auto;
 }
 
 blockquote {
   background-color: var(--color-secondary);
   color: white;
-  margin: 1em auto;
+  margin: auto;
   text-align: center;
   font-weight: 500;
   font-size: 1.05em;
@@ -116,53 +149,108 @@ blockquote {
   max-width: 30ch;
 }
 
+ol li {
+    
+  margin-left: 0em;
+  max-width: 60ch;
+ }
+
+/*specific blockquotes or text sections*/
+
 #themuseum blockquote{
   background-color: var(--color-primary);
   max-width: 50ch;
-  margin-top: -1em;
 }
 
 #themuseum h4{
   font-style: italic;
   text-align: end;
-  margin: 2em;
+  margin: auto;
 }
 
-h2 {
-  scroll-snap-type: y mandatory;
+blockquote {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin: 2em auto;
+ }
+
+#intro {
+    border: 1px solid var(--color-primary);
+    background-color: white;
+    border-radius: 15px;
+    padding: 1em;
+    max-width: 70ch;
+    margin: auto;
+  }
+  
+  #paintingtut {
+   
+    list-style-type: none;
+   
+    margin: auto;
+   
+    
+  }
+  #paintingtut li{
+
+    border-radius: 15px;
+  
+  }
+
+ #whattodo {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 1em;
+  max-width: 35em;
+  margin: 2em auto;
+ }
+
+/*
+grids and flex
+
+*/
+.cluegrid {
+  width: 70ch;
+  margin: 2em auto;
+   
+ }
+
+ .cluegrid h3 {
+  margin: 1em auto;
+ }
+
+
+ 
+
+ .biogrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  font-style: ;
+  gap: -5px;
+  grid-auto-flow: column;
+margin: auto;
+max-width: 35em;
+
+  align-items: center;
+  
+}
+.biogrid img{
+  max-width: 15em;
+  align-self:center; 
+
+  padding: -5em;
+  grid-row: 1;
+
+ margin: 0;
+ justify-self: center;
 }
 
-.themewrapper {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
+
 
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
-* {
-  font-size: 20px;
-  margin: 0;
-}
-
-@font-face {
-  font-family: Halant;
-  font-style: normal;
-  src: local("Halant"), url(/fonts/Halant-regular.ttf) format("truetype");
-}
-article {
- 
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
-
-
-section {
-  margin: 1em;
-  max-width: 85vw;
-  text-align: start;
-}
 
 
 
@@ -170,7 +258,6 @@ section {
 
 nav {
   width: 100vw;
-
   background-color: var(--color-secondary-alt);
 
 }
@@ -188,20 +275,8 @@ nav ul li {
   margin: 1em 2em;
 }
 
-.box {
-  display: block;
-  background-color: red;
-  border: 1px solid black;
-  height: 100px;
-  width: 100px;
-}
 
 
-.scroll-section {
- 
-  scroll-snap-type: mandatory;
-  }
- 
 
 
 @media (max-width: 600px) {
@@ -306,6 +381,7 @@ margin: 1em auto auto auto;
 background-color: white;
 color: var(--color-primary);
 text-transform: none;
+font-family: "Halant";
 }
 
 
@@ -336,14 +412,14 @@ color: var(--color-primary);
 text-transform: none;
 }
   
-.cluegrid {
+.clue {
   
   margin: auto;
   
 }
 .clue:nth-last-of-type(odd) {
   display: grid;
-  max-width: 80vw;
+  
   grid-template-rows: auto;
   transition: ease-in-out;
 
@@ -352,12 +428,11 @@ text-transform: none;
 }
 .clue:nth-last-of-type(even) {
   display: grid;
-  max-width: 80vw;
+  
   grid-template-rows: auto;
   transition: ease-in-out;
   justify-items: center;
 
-  
   margin: 1em 0em;
 }
 .suspectcard ul li, .suspectcard p {
@@ -367,12 +442,17 @@ text-transform: none;
 .suspectcard {
 padding: 1em;
 
-
+width: 15em;
 background-color: white;
 margin: 1em;
 border-radius: 20px;
 border: 1px solid black;
 }
+.cluegrid {
+  max-width: 80vw;
+}
+
+
 .cluegrid p {
 
 text-justify: center;
@@ -397,18 +477,15 @@ transition: transform 0.3s;
 
 
 
-  @media (min-width: 600px) {
+@media (min-width: 600px) {
 
-    .cluegrid {
-        
-      margin: auto;
-      
-    }
+    
     .clue {
       display: flex;
       align-items: center;
      height: 17em;
       transition: ease-in-out;
+    
     }
   
     .suspectcard ul li, .suspectcard p {
@@ -468,14 +545,8 @@ transition: transform 0.3s;
     
   
     
-    .first-section {
-      padding: 50px 0 20px 0;
-    }
-    .text-header {
-      font-size: 50px;
-      text-align: center;
-    }
-    
+   
+   
     
     #hero, .layer {
       min-height: 800px;
@@ -501,38 +572,13 @@ transition: transform 0.3s;
     
 
    
-    .biogrid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      font-style: ;
-      gap: -5px;
-      grid-auto-flow: column;
-  
-    
-      align-items: center;
-      
-    }
-    .biogrid img{
-      max-width: 15em;
-      align-self:center; 
- 
-      padding: -5em;
-      grid-row: 1;
- 
-     margin: 0;
-     justify-self: center;
-    }
     
     section {
       margin: auto;
-      text-align: start;
-      padding: 1em 0em;
+      padding: 2em 0em;
       
     }
-    p {
-      margin: 1em 3em;
-    }
+   
 
     .stolenpainting img{
       height: 300px;
@@ -556,11 +602,11 @@ transition: transform 0.3s;
     .stolenpaintingv {
   
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      
       gap: 10px;
       
      
-      justify-items: right;
+      justify-items: center;
       transition: transform 0.3s;
     }
 
@@ -597,12 +643,7 @@ transition: transform 0.3s;
       margin-left: 0;
   }
 
-  #intro {
-    border: 1px solid var(--color-primary);
-    background-color: white;
-    border-radius: 15px;
-    padding: 1em;
-  }
+ 
   .anecdotegrid {
     max-width: 30em;
     margin: auto;
@@ -625,6 +666,7 @@ transition: transform 0.3s;
   background-color: white;
   color: var(--color-primary);
   text-transform: none;
+  font-family: "Halant" ;
 }
 
 
@@ -668,6 +710,7 @@ transition: transform 0.3s;
       width: 15em;
       float: left;
       float: right;
+      margin: auto;
     }
       @keyframes spin {
         to {
@@ -715,28 +758,20 @@ transition: transform 0.3s;
        
   
       }
-      .comparisongrid {
-        display: flex;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-       
-        grid-auto-flow: column;
-        margin-bottom: 1em;
+      .courtyardcontainer {
         
-        margin: auto;
-        gap: 1px;
-        align-items: center;
       }
       
+      
       #comparisonframe {
-       
+        margin: auto;
         width: 20em;
       }
 
       figcaption {
         font-style: italic;
       }
-      figure { 
+      #themuseum figure { 
         position: absolute;
         background-image: url('/images/beforeafter/2.png');
         background-size: cover;
@@ -885,16 +920,15 @@ transition: transform 0.3s;
   z-index: 1000;
       }
      
+
+    /*scrollmap*/
 #scrollmap{
  margin: auto;
 }
 
-
-
-
       .svg-container {
         
-        background-image: url(/images/museummap.jpeg);
+        background-image: url('/images/museummap.jpeg');
       background-size: cover;
   
        width: 30em;
@@ -911,14 +945,13 @@ transition: transform 0.3s;
       .bigspacer {
    
       }
-
-
-#lastditch{ 
-  margin: auto;
- display: flex;
- flex-wrap: wrap;
+@media (max-width: 600px) {
+  .svg-container {
+    width: 2em;
+  }
+  
 }
-    
+
       
       
       .damagecounter {
@@ -932,11 +965,15 @@ transition: transform 0.3s;
       
       #suspectsketches {
         width: 20em;
-        float: left;
-        background-image: url('/images/headerpics/newspaper.png');
+        background-image: url('images/headerpics/newspaper.png');
         padding: 1em;
-        margin:  0em 1em;
+        text-align: center;
+        display: block;
+        margin: auto;
+        
       }
+
+      
 .bigspacer {
   height: 3em;
   color: var(--color-primary);
@@ -961,44 +998,13 @@ transition: transform 0.3s;
   font-weight: 550;
   margin: auto;
 }
-#damagecontainer {
-  margin-bottom: 3em;
+.damagecontainer {
+  margin: 3em auto;
 }
 
       
-       .pad {
-        height: 4em;
-       }
-
-    #paintingtut {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      list-style-type: none;
-     
-      margin: auto;
-     
       
-    }
-    #paintingtut li{
-   
-      
-    
-    
-      border-radius: 15px;
-    
-    }
 
-   #whattodo {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 1em;
-    max-width: 35em;
-    margin: auto;
-   }
+  
     
-   ol li {
-    
-    margin-left: 4em;
-    max-width: 60ch;
-   }
+  
