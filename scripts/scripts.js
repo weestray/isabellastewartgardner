@@ -1,4 +1,6 @@
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 var divisor = document.getElementById("divisor"),
@@ -24,7 +26,7 @@ alarmOverlay.id = "alarm-overlay";
 document.body.appendChild(alarmOverlay);
 
 
-hiddenParagraph.hidden = true;
+
 
 
 alarmButton.addEventListener("click", () => {
@@ -47,19 +49,19 @@ alarmButton.addEventListener("click", () => {
 });
 
 
-gsap.to("#minutesCount", { scrollTrigger: '#degas', innerText: 81, duration: 3, 
+gsap.to("#minutesCount", { scrollTrigger: '#moneyCount', innerText: 81, duration: 3, 
   snap: {
     innerText:3
   } 
   });
 
-  gsap.to("#paintingsCount", { scrollTrigger: '#degas', innerText: 13, duration: 3, 
+  gsap.to("#paintingsCount", { scrollTrigger: '#moneyCount', innerText: 13, duration: 3, 
     snap: {
       innerText:1
     } 
     });
   
-    gsap.to("#moneyCount", { scrollTrigger: '#degas', innerText: 500, duration: 3, 
+    gsap.to("#moneyCount", { scrollTrigger: '#moneyCount', innerText: 500, duration: 3, 
       snap: {
         innerText:5
       } 
@@ -112,38 +114,42 @@ gsap.utils.toArray(".parallax").forEach(layer => {
 });
 
 
-
+/*
 gsap.to('#degas', {
   scrollTrigger: '#stormsea', 
   opacity: 0,
   duration: 3,
-  delay: 2
+  delay: 2,
+  yoyo: true
 });
 
 gsap.to('#stormsea', {
   scrollTrigger: '#cheztort', 
   opacity: 0,
   duration: 3,
-  delay: 2
+  delay: 2,
+  yoyo: true
 });
 
 gsap.to('#cheztort', {
   scrollTrigger: '#concert', 
   opacity: 0,
   duration: 3,
-  delay: 2
+  delay: 2,
+  yoyo: true
 });
 
 gsap.to('#concert', {
   scrollTrigger: '#concert', 
   opacity: 0,
   duration: 5,
-  delay: 3
+  delay: 3,
+  yoyo: true
 });
 
 
 
-/*gsap.to('#globe', { 
+gsap.to('#globe', { 
   scrollTrigger: '#globe',
     duration: .4,
     scaleX: -1,
