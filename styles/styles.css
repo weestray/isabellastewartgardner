@@ -210,7 +210,7 @@ nav ul li {
     max-width: 8em;
     margin: auto;
     align-self: start;
-    margin-top
+  
     
   }
   
@@ -449,7 +449,7 @@ transition: transform 0.3s;
       
     }
     #hero {
-      height: $heroHeight;
+
       overflow: hidden;
       position: relative;
       max-width: 2200px;
@@ -461,7 +461,7 @@ transition: transform 0.3s;
       background-size: auto;
       background-repeat: no-repeat;
       width: 100%;
-      height: $heroHeight;
+     
       position: fixed;
       z-index: -1;
     }
@@ -520,7 +520,7 @@ transition: transform 0.3s;
     .biogrid img{
       max-width: 15em;
       align-self:center; 
-    grid-row-start: ;
+ 
       padding: -5em;
       grid-row: 1;
  
@@ -956,7 +956,7 @@ transition: transform 0.3s;
 }
 
 .damagegrid {
-  background-color: pink;;
+
   grid-template-columns: 3fr 1fr;
 }
 

@@ -114,7 +114,7 @@ gsap.utils.toArray(".parallax").forEach(layer => {
 });
 
 
-/*
+
 gsap.to('#degas', {
   scrollTrigger: '#stormsea', 
   opacity: 0,
@@ -147,19 +147,5 @@ gsap.to('#concert', {
   yoyo: true
 });
 
-
-
-gsap.to('#globe', { 
-  scrollTrigger: '#globe',
-    duration: .4,
-    scaleX: -1,
-    repeat: 8,
-    yoyo: true
-  });
-
-
-
-gsap.to(".box", {
-});*/ 
 
 
