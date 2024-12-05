@@ -201,7 +201,7 @@ blockquote {
   background-color: white;
   border: 1px solid black;
   border-radius: 15px;
-  padding: 1em;
+  padding: 1em 3em 3em 3em;
   max-width: 35em;
   margin: 2em auto;
  }
@@ -483,6 +483,7 @@ transition: transform 0.3s;
     .clue {
       display: flex;
       align-items: center;
+      justify-content: space-between;
      height: 17em;
       transition: ease-in-out;
     
@@ -553,18 +554,18 @@ transition: transform 0.3s;
     }
     
     .layer-bg {
-      background-image: url('./images/headerpics/bg.png');
+      background-image: url('/images/headerpics/bg.png');
   
     }
     .layer-1 {
-      background-image: url('./images/headerpics/anotherlayer.png');
+      background-image: url('/images/headerpics/anotherlayer.png');
       background-position: left bottom;
     }
     .layer-2 {
-      background-image: url('./images/headerpics/isabella.png');
+      background-image: url('/images/headerpics/isabella.png');
     }
     .layer-3 {
-      background-image: url('.s/images/headerpics/cautiontape.png');
+      background-image: url('/images/headerpics/cautiontape.png');
       background-position: right bottom;
     }
     
@@ -930,7 +931,7 @@ transition: transform 0.3s;
 
       .svg-container {
         
-        background-image: url('../images/museummap.jpeg');
+        background-image: url('./images/museummap.png');
       background-size: cover;
   
        width: 30em;
@@ -1044,7 +1045,7 @@ transition: transform 0.3s;
 
 .eightball {
   margin: auto;
-  width: 45em;
+
   justify-items: center;
 }
 .eightball h1 {
