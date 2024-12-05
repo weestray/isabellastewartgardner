@@ -554,18 +554,18 @@ transition: transform 0.3s;
     }
     
     .layer-bg {
-      background-image: url('/images/headerpics/bg.png');
+      background-image: url('../images/headerpics/bg.png');
   
     }
     .layer-1 {
-      background-image: url('/images/headerpics/anotherlayer.png');
+      background-image: url('../images/headerpics/anotherlayer.png');
       background-position: left bottom;
     }
     .layer-2 {
-      background-image: url('/images/headerpics/isabella.png');
+      background-image: url('../images/headerpics/isabella.png');
     }
     .layer-3 {
-      background-image: url('/images/headerpics/cautiontape.png');
+      background-image: url('../images/headerpics/cautiontape.png');
       background-position: right bottom;
     }
     
@@ -931,7 +931,7 @@ transition: transform 0.3s;
 
       .svg-container {
         
-        background-image: url('./images/museummap.png');
+        background-image: url('../images/museummap.png');
       background-size: cover;
   
        width: 30em;
@@ -1007,9 +1007,9 @@ transition: transform 0.3s;
 
       
 @keyframes randomAnswer {
-  0% { content: "..."; }
+  0% { content: "?"; }
   5% { content: 'the COM basement'; }
-  10% { content: 'The Charles River'; }
+  10% { content: 'Charles River'; }
   15% { content: 'on a yacht'; }
   20% { content: 'a private collection'; }
   25% { content: 'the white house'; }
@@ -1017,8 +1017,8 @@ transition: transform 0.3s;
   35% { content: 'Outlook good'; }
   40% { content: 'vegas hotel suite'; }
   45% { content: 'allston, ma'; }
-  50% { content: 'Reply hazy try again'; }
-  55% { content: 'Ask again later'; }
+  50% { content: 'Warren Towers'; }
+  55% { content: "someone's attic"; }
   60% { content: 'Better not tell you now'; }
   65% { content: 'Cannot predict now'; }
   70% { content: 'Focus and ask again'; }
