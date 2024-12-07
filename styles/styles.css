@@ -86,6 +86,8 @@ p, blockquote, figcaption, ul, ol, h4 {
   font-size: 1rem;
   text-align: start;
   margin: auto;
+  padding: .5em;
+ 
 }
 li {
   font-family: 'Halant';
@@ -106,17 +108,7 @@ figure {
   margin: 1.5em;
 }
 
-h1 {
-  background-color: var(--color-primary);
-  color: white;
-  max-width: 20em;
 
-  text-align: center;
-  font-weight: 500;
-  font-size: 2em;
-  padding: 1em;
-  
-}
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
@@ -157,15 +149,28 @@ ol li {
 
 /*specific blockquotes or text sections*/
 
+#today h4 {
+  font-weight: 500;
+  margin-top: 2em;
+}
+.suspectname {
+ 
+}
+
+#intro p{
+
+margin-bottom: 1em;
+
+}
 #themuseum blockquote{
   background-color: var(--color-primary);
   max-width: 50ch;
 }
 
-#themuseum h4{
+.segue {
   font-style: italic;
   text-align: end;
-  margin: auto;
+  margin: 2em auto 1em auto;
 }
 
 blockquote {
@@ -185,16 +190,101 @@ blockquote {
   
   #paintingtut {
    
-    list-style-type: none;
-   
-    margin: auto;
-   
+    list-style-type: "✦";
+   margin: 0;
+
     
   }
+  #paintingtut span, .suspectname, #today span{
+    font-weight: 600;
+  }
   #paintingtut li{
-
+    padding-inline-start: 1ch;
     border-radius: 15px;
   
+  }
+  
+  .placard h4, .placard p {
+    text-align: left;
+    font-size: .8rem;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0;
+}
+
+.placard h4 {
+  text-align: left;
+  font-size: .8rem;
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0;
+  font-weight: 600;
+}
+
+  .placard span {
+    font-style: italic;
+    text-align: left;
+    font-size: .8rem;
+  }
+
+  @media (min-width: 820px) {
+
+    
+      
+  .handsgrid {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      gap: 0px;
+      margin: auto;
+      max-width: 90vw;
+
+  }
+
+  .handsgrid img {
+  width: 20vw;
+  
+  }
+  #lefthand {
+    
+    justify-self:end;
+    margin-top: 2em;
+  }
+  #righthand {
+    justify-self: start;
+    align-self: end;
+  }
+ 
+
+ #whattodo {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 1em 3em 3em 3em;
+  
+  margin: 2em 0;
+ }
+
+}
+
+
+
+
+.food {
+
+}
+@media (max-width: 820px) {
+ 
+  #themuseum blockquote, #robberynight blockquote {
+
+    max-width: 30ch;
+  } 
+  .handsgrid img {
+  display: none;
+  
+  }
+  
+  #intro {
+    max-width: 40ch;
   }
 
  #whattodo {
@@ -202,50 +292,126 @@ blockquote {
   border: 1px solid black;
   border-radius: 15px;
   padding: 1em 3em 3em 3em;
-  max-width: 35em;
+  max-width: 90vw;
   margin: 2em auto;
  }
 
+}
+
+    
+
+
+ 
 /*
 grids and flex
 
 */
-.cluegrid {
-  width: 70ch;
-  margin: 2em auto;
-   
+.suspectcard ul li, .suspectcard p {
+  font-size: .9em;
+}
+.suspectcard span {
+  
+  font-size: 1em;
+  font-weight: 600;
+}
+.suspectcard ul {
+  list-style-type: "✦";
+}
+.suspectcard ul li {
+  padding-inline-start: 1ch;
+}
+
+.cluegrid p {
+
+text-justify: center;
+margin: 1em auto auto auto;
+color: var(--color-primary);
+text-transform: none;
+}
+
+@media (min-width: 600px) {
+
+  h1 {
+    background-color: var(--color-secondary);
+    color: white;
+    max-width: 9em;
+  margin: 5em auto;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+    padding: 1em;
+
+  }
+ #mobile h1 {
+  display: none;
  }
 
- .cluegrid h3 {
-  margin: 1em auto;
+  .suspectcard {
+    padding: 1em;
+    background-color: white;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    min-height: 15em;
+    }
+
+#investigation .cluecard img{
+  height: 15em;
+}
+
+.cluegrid .clue {
+  transition: transform 0.8s;
+}
+.cluegrid {
+ margin: auto;
+  display: grid;
+  max-width: 95vw;
+ }
+.cluecard {
+  
+}
+.cluegrid .clue:hover {
+  transform: scale(1.05);
+ 
+}
+#suspectsketches {
+  max-width: 20em;
+    padding: 1em;
+    text-align: center;
+    display: block;
+    margin: auto;
+    
+  }
+ .clue {
+  display: flex;
+  align-items:start;
+  gap: 10px;
+  transition: ease-in-out;
+  margin: 2em auto;
+}
+
+}
+
+
+
+ #investigation h3 {
+  margin: 2em auto;
  }
 
 
  
 
- .biogrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  font-style: ;
-  gap: -5px;
-  grid-auto-flow: column;
-margin: auto;
-max-width: 35em;
+ 
 
-  align-items: center;
-  
+ ul{
+  list-style-type: "✦";
+  padding-left: 1em;
 }
-.biogrid img{
-  max-width: 15em;
-  align-self:center; 
-
-  padding: -5em;
-  grid-row: 1;
-
- margin: 0;
- justify-self: center;
+ul li{
+  padding-inline-start: 1ch;
 }
+
+
+
 
 
 
@@ -281,12 +447,26 @@ nav ul li {
 
 @media (max-width: 600px) {
   
-  .biogrid img{
-    max-width: 8em;
-    margin: auto;
-    align-self: start;
-  
+
+#globe {
+  max-width: 10em;
+}
+  .biogrid {
+  display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+  margin: 1em auto;
+  max-width: 35em;
+  padding: 1em;
+    align-items: center;
     
+  }
+  .biogrid img{
+    max-width: 15em;
+   
+    grid-row: 1;
+    margin: inherit;
+    justify-self: center;
   }
   
   section {
@@ -299,46 +479,40 @@ nav ul li {
   }
 
   .stolenpainting img{
-    width: 2em;
+    width: 16em;
+    filter: drop-shadow(0 0 0.5rem #a29476); 
   }
   .stolenpainting {
-    border: 1px solid red;
+ 
     display: grid;
-    grid-template-rows: 1fr 1fr;
+  
     gap: 10px;
-    margin: 1em auto;
-    
-    transition: transform 0.3s;
+    margin: 2em auto;
+    justify-items: center;
+
   
   }
   .stolenpaintingv img{
-    width: 2em;
-    justify-items: right;
+    width: 14em;
+    filter: drop-shadow(0 0 0.5rem #a29476); 
   }
   .stolenpaintingv {
-    border: 1px solid red;
+  
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    
     gap: 10px;
-    margin: 4em auto;
+    margin: 2em auto;
    
-    justify-items: right;
-    transition: transform 0.3s;
+    justify-items: center;
+  
   }
 
- 
-  
-  .stolenpaintingv:hover, .stolenpainting:hover {
-  
-    transform: scale(1.1);
-   
-  }
+ #today ul {
+  padding: 2em;
+ }
 
-  .frame {
-    padding: 5px;
-   
-    background-color: var(--color-background);
-  }
+
+
 
 .placard {
     background-color: white;
@@ -349,13 +523,6 @@ nav ul li {
     margin-top: 3em;
     padding: 10px;
     color: var(--color-primary);
-}
-.placard h4, .placard p {
-    text-align: left;
-    font-size: .8rem;
-    line-height: 1.2;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 0;
 }
 
 
@@ -382,6 +549,7 @@ background-color: white;
 color: var(--color-primary);
 text-transform: none;
 font-family: "Halant";
+max-width: 20ch;
 }
 
 
@@ -397,21 +565,43 @@ border-radius: 15px 15px 1px 15px;
 .anecdotegrid .anecdote {
 transition: transform 0.3s;
 }
-.anecdotegrid .anecdote:hover {
-margin: auto;
-transform: scale(1.1);
 
-}
 
 .anecdotegrid p {
 font-size: .8em;
 font-style: italic;
+
 text-align: center;
 margin: 0;
 color: var(--color-primary);
 text-transform: none;
 }
   
+
+
+
+#mobile {
+  height: 60vh;
+  background-color: pink;
+}
+
+
+#mobile h1 {
+  background-color: var(--color-secondary);
+  color: white;
+  max-width: 9em;
+  margin: auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2em;
+  padding: 2em;
+  
+}
+
+#hero h1 {
+  display: none;
+}
+
 .clue {
   
   margin: auto;
@@ -424,11 +614,13 @@ text-transform: none;
   transition: ease-in-out;
 
   justify-items: center;
-  margin-top: 3em;
+
 }
 .clue:nth-last-of-type(even) {
-  display: grid;
-  
+  display: flex;
+  flex-direction: column-reverse;
+
+  align-items: center;
   grid-template-rows: auto;
   transition: ease-in-out;
   justify-items: center;
@@ -436,21 +628,17 @@ text-transform: none;
   margin: 1em 0em;
 }
 .suspectcard ul li, .suspectcard p {
-  font-size: .8em;
+  font-size: 1em;
 
 }
-.suspectcard {
-padding: 1em;
 
-width: 15em;
-background-color: white;
-margin: 1em;
-border-radius: 20px;
-border: 1px solid black;
+.suspectcard ul {
+  list-style-type: "✦";
 }
-.cluegrid {
-  max-width: 80vw;
+.suspectcard ul li {
+  padding-inline-start: 1ch;
 }
+
 
 
 .cluegrid p {
@@ -463,12 +651,27 @@ text-transform: none;
 }
 
 #investigation .cluecard img{
-  max-width: 60vw;
+  max-width: 80vw;
 }
+.suspectcard {
+  padding: 1em;
+  max-width: 80vw;
+  background-color: white;
+  margin: 1em;
+  border-radius: 20px;
+  border: 2.5px solid black;
+  }
 
 .cluegrid .clue {
-transition: transform 0.3s;
+
 }
+#paintingtut {
+  padding-left: 0;
+}
+#comparisonframe {
+  max-width: 80vw;
+  margin: auto;
+ }
 
 
 }
@@ -479,49 +682,33 @@ transition: transform 0.3s;
 
 @media (min-width: 600px) {
 
-    
-    .clue {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-     height: 17em;
-      transition: ease-in-out;
-    
-    }
+  .biogrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-auto-flow: column;
+  margin: 1em auto;
+  max-width: 35em;
   
-    .suspectcard ul li, .suspectcard p {
-      font-size: .8em;
-    }
-  .suspectcard {
-    padding: 1em;
+    align-items: center;
     
-    background-color: white;
-    margin: 1em;
-    border-radius: 20px;
-    border: 1px solid black;
   }
-  .cluegrid p {
-    
-    text-justify: center;
-    margin: 1em auto auto auto;
-    
-    color: var(--color-primary);
-    text-transform: none;
-  }
+  .biogrid img{
+    max-width: 15em;
+    align-self:center; 
   
-  #investigation .cluecard img{
-    height: 15em;
-  }
+    padding: -5em;
+    grid-row: 1;
   
-  .cluegrid .clue {
-    transition: transform 0.3s;
+   margin: 0;
+   justify-self: center;
   }
-  .cluegrid .clue:hover {
+
+  #comparisonframe {
+    max-width: 20em;
     margin: auto;
-    transform: scale(1.1);
-   
-  }
-    
+   }
+
     
     section {
       
@@ -571,7 +758,6 @@ transition: transform 0.3s;
     
    
     
-
    
     
     section {
@@ -584,18 +770,31 @@ transition: transform 0.3s;
     .stolenpainting img{
       height: 300px;
       width: 380px;
+      transition: ease-in-out;
+  
     }
+    .stolenpaintingv img:hover {
+
+      filter: drop-shadow(0 0 0.75rem #c6b48b);             
+  }
+  .stolenpainting img:hover {
+
+    filter: drop-shadow(0 0 0.9rem #c6b48b);  
+             
+}
     .stolenpainting {
 
       display: grid;
-      grid-template-rows: 3fr 2fr;
-      margin: 1em auto;
+   
+      margin: 2em auto 1em auto;
       gap: 10px;
       justify-items: center;
-      transition: transform 0.3s;
+      transition: transform 0.8s;
+  
     
     }
     .stolenpaintingv img{
+      transition: ease-in-out;
       height: 375px;
       
       justify-items: right;
@@ -606,9 +805,9 @@ transition: transform 0.3s;
       
       gap: 10px;
       
-     
+      margin: 2em auto 2em auto;
       justify-items: center;
-      transition: transform 0.3s;
+      transition: transform 0.8s;
     }
 
     
@@ -617,7 +816,7 @@ transition: transform 0.3s;
     
     .stolenpaintingv:hover, .stolenpainting:hover {
     
-      transform: scale(1.1);
+      transform: scale(1.05);
      
     }
 
@@ -630,10 +829,9 @@ transition: transform 0.3s;
  .placard {
       background-color: white;
       font-size: 0.5rem;
-      max-width: 380px;
-      max-height: 150px;
+     max-width: 50em;
       margin-top: 3em;
-      padding: 10px;
+      padding: 2em;
       color: var(--color-primary);
   }
 .placard h4, .placard p {
@@ -681,7 +879,7 @@ transition: transform 0.3s;
   border-radius: 15px 15px 1px 15px;
 }
 .anecdotegrid .anecdote {
-  transition: transform 0.3s;
+  transition: transform 0.8s;
 }
 .anecdotegrid .anecdote:hover {
   margin: auto;
@@ -762,16 +960,12 @@ transition: transform 0.3s;
       .courtyardcontainer {
         
       }
-      
-      
-      #comparisonframe {
-        margin: auto;
-        width: 20em;
-      }
-
       figcaption {
         font-style: italic;
       }
+      
+    
+      
       #themuseum figure { 
         position: absolute;
         background-image: url('../images/beforeafter/2.png');
@@ -890,7 +1084,7 @@ transition: transform 0.3s;
         height: 7em;
         border: 1px solid white;
         transition: ease-in-out;
-        transition: transform 0.3s;
+        transition: transform 0.6s;
       }
 
       #alarm-button:hover {
@@ -934,7 +1128,7 @@ transition: transform 0.3s;
         background-image: url('../images/museummap.png');
       background-size: cover;
   
-       width: 30em;
+       max-width: 30em;
        margin: auto;
     
         align-items: center;
@@ -950,7 +1144,15 @@ transition: transform 0.3s;
       }
 @media (max-width: 600px) {
   .svg-container {
-    width: 2em;
+    width: 80vw;
+  }
+  #suspectsketches {
+  max-width: 90vw;
+    padding: 1em;
+    text-align: center;
+    display: block;
+    margin: auto;
+    
   }
   
 }
@@ -966,16 +1168,7 @@ transition: transform 0.3s;
           margin-bottom: 2em;
       }
       
-      #suspectsketches {
-        width: 20em;
-        background-image: url('../images/headerpics/newspaper.png');
-        padding: 1em;
-        text-align: center;
-        display: block;
-        margin: auto;
-        
-      }
-
+      
       
 .bigspacer {
   height: 3em;
@@ -997,7 +1190,7 @@ transition: transform 0.3s;
 }
 
 #minutesCount, #moneyCount, #paintingsCount, .damagecontainer ul li {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 550;
   margin: auto;
 }
@@ -1135,7 +1328,7 @@ transition: transform 0.3s;
   content: '';
   animation: randomAnswer 1000ms steps(1, end) infinite;
 	flex: none;
-	width: 57px;
+	max-width: 10ch;
 	color: #ffffff;
 	text-align: center;
 	font: 600 14px sans-serif;
