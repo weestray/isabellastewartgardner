@@ -57,7 +57,7 @@
 
 #robberynight blockquote{
   background-color: var(--color-primary-alt);
-  max-width: 50ch;
+  max-width: 30ch;
   color: var(--color-primary);
 }
 
@@ -132,7 +132,7 @@ h3 {
 blockquote {
   background-color: var(--color-secondary);
   color: white;
-  margin: auto;
+  margin: 3em auto;
   text-align: center;
   font-weight: 500;
   font-size: 1.05em;
@@ -157,7 +157,7 @@ ol li {
  
 }
 
-#intro p{
+#intro p, #outro p{
 
 margin-bottom: 1em;
 
@@ -176,16 +176,16 @@ margin-bottom: 1em;
 blockquote {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  margin: 2em auto;
+ 
  }
-
-#intro {
+  
+#intro, #outro {
     border: 1px solid var(--color-primary);
     background-color: white;
     border-radius: 15px;
     padding: 1em;
     max-width: 70ch;
-    margin: auto;
+    margin: 2em auto;
   }
   
   #paintingtut {
@@ -197,6 +197,10 @@ blockquote {
   }
   #paintingtut span, .suspectname, #today span{
     font-weight: 600;
+  }
+
+  #today li {
+    margin: .4em auto;
   }
   #paintingtut li{
     padding-inline-start: 1ch;
@@ -283,7 +287,7 @@ blockquote {
   
   }
   
-  #intro {
+  #intro, #outro {
     max-width: 40ch;
   }
 
@@ -306,6 +310,47 @@ blockquote {
 grids and flex
 
 */
+
+.creditgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1em auto;
+  max-width: 70ch;
+  gap: 2em;
+  
+}
+.creditgrid div, #credits {
+border: 2px solid var(--color-primary-alt);
+border-radius: 15px;
+padding: 1em;
+  
+}
+#creditgrid h3 {
+ 
+  text-align: left;
+
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+#about ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  gap: 1em;
+  margin: auto;
+
+}
+#about ul li {
+  
+  color: var(--color-primary);
+  background-color: var(--color-primary-alt);
+  padding: 1.5em;
+  max-width: 10em;
+  text-align: center;
+}
+
+
 .suspectcard ul li, .suspectcard p {
   font-size: .9em;
 }
@@ -331,17 +376,30 @@ text-transform: none;
 
 @media (min-width: 600px) {
 
-  h1 {
+ header {
     background-color: var(--color-secondary);
     color: white;
-    max-width: 9em;
+  max-width: 20em;
   margin: 5em auto;
+  padding: 1em;
     text-align: center;
-    font-weight: 500;
-    font-size: 2em;
-    padding: 1em;
-
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
   }
+
+  header h1 {
+    font-weight: 550;
+    font-size: 2em;
+    max-width: inherit;
+    padding: 0em 1em;
+    line-height: 1.75em;
+  }
+header h2 {
+  font-size: 1em;;
+  padding: 1em;
+}
+
+
  #mobile h1 {
   display: none;
  }
@@ -1207,19 +1265,19 @@ text-transform: none;
   20% { content: 'a private collection'; }
   25% { content: 'the white house'; }
   30% { content: 'swiss bank vault'; }
-  35% { content: 'Outlook good'; }
+  35% { content: 'on a yacht'; }
   40% { content: 'vegas hotel suite'; }
   45% { content: 'allston, ma'; }
   50% { content: 'Warren Towers'; }
-  55% { content: "someone's attic"; }
-  60% { content: 'Better not tell you now'; }
-  65% { content: 'Cannot predict now'; }
-  70% { content: 'Focus and ask again'; }
-  75% { content: 'Do not count on it'; }
-  80% { content: 'My reply is no'; }
-  85% { content: 'My sources say no'; }
-  90% { content: 'Outlook not so good'; }
-  95% { content: 'Very doubtful'; }
+  55% { content: "a locked vault"; }
+  60% { content: 'vegas hotel suite'; }
+  65% { content: 'in the jungle'; }
+  70% { content: 'a private collection'; }
+  75% { content: 'in plain sight'; }
+  80% { content: 'canada'; }
+  85% { content: "swiss bank vault"; }
+  90% { content: 'the white house'; }
+  95% { content: 'Warren Towers'; }
 }
 /* https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
 @keyframes shake {
