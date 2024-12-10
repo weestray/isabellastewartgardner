@@ -17,37 +17,6 @@ window.onload = function() {
 };
 
 
-const alarmButton = document.getElementById("alarm-button");
-const alarmOverlay = document.createElement("div");
-const hiddenParagraph = document.getElementById("hidden-paragraph");
-
-
-alarmOverlay.id = "alarm-overlay";
-document.body.appendChild(alarmOverlay);
-
-
-
-
-
-alarmButton.addEventListener("click", () => {
-  let flashCount = 0;
-  alarmOverlay.style.display = "block"; 
-
-  
-  const flashInterval = setInterval(() => {
-    alarmOverlay.style.display =
-      alarmOverlay.style.display === "block" ? "none" : "block";
-    flashCount++;
-
-    if (flashCount >= 10) {
-      clearInterval(flashInterval);
-      alarmOverlay.style.display = "none"; 
-
-      hiddenParagraph.hidden = false;
-    }
-  }, 500); 
-});
-
 
 gsap.to("#minutesCount", { scrollTrigger: '#moneyCount', innerText: 81, duration: 3, 
   snap: {
@@ -63,7 +32,7 @@ gsap.to("#minutesCount", { scrollTrigger: '#moneyCount', innerText: 81, duration
   
     gsap.to("#moneyCount", { scrollTrigger: '#moneyCount', innerText: 500, duration: 3, 
       snap: {
-        innerText:5
+        innerText:10
       } 
       });
 
@@ -118,7 +87,38 @@ gsap.registerPlugin(ScrollTrigger);
 const pageContainer = document.querySelector(".container");
 
 
+const selectHotspot = (e) => {
+  const clickedHotspot = e.target.parentElement;
+  const container = clickedHotspot.parentElement;
+  
+  // only include hotspots within same image to allow one open hotspot per image; change "container" to "document" to allow only one open hotspot for entire page:
+  const hotspots = document.querySelectorAll(".lg-hotspot"); 
+  hotspots.forEach(hotspot => {
+    if (hotspot === clickedHotspot) {
+      hotspot.classList.toggle("lg-hotspot--selected");
+    } else {
+      hotspot.classList.remove("lg-hotspot--selected");
+    }
+  });
+}
+
+(() => {
+  const buttons = document.querySelectorAll(".lg-hotspot__button");
+  buttons.forEach(button => {
+    button.addEventListener("click", selectHotspot);
+  });
+})();
+
+
 /*
+
+gsap.fromTo('#degas', { filter: "grayscale(100%)" }, {   scrollTrigger: '#degas', delay: 1.0, duration: 2.0, filter: "grayscale(0%)" })
+
+gsap.fromTo('#stormsea', { filter: "grayscale(100%)" }, {   scrollTrigger: '#stormsea', delay: 2.0, duration: 2.0, filter: "grayscale(0%)" })
+
+gsap.fromTo('#concert', { filter: "grayscale(100%)" }, {   scrollTrigger: '#concert', delay: 2.0, duration: 2.0, filter: "grayscale(0%)" })
+
+gsap.fromTo('#cheztort', { filter: "grayscale(100%)" }, {   scrollTrigger: '#cheztort', delay: 2.0, duration: 2.0, filter: "grayscale(0%)" })
 
 gsap.to('#degas', {
   scrollTrigger: '#stormsea', 
@@ -130,12 +130,11 @@ gsap.to('#degas', {
 
 gsap.to('#stormsea', {
   scrollTrigger: '#cheztort', 
-  opacity: 0,
+  saturation: 0,
   duration: 3,
   delay: 2,
   yoyo: true
 });
-
 gsap.to('#cheztort', {
   scrollTrigger: '#concert', 
   opacity: 0,
@@ -143,6 +142,7 @@ gsap.to('#cheztort', {
   delay: 2,
   yoyo: true
 });
+
 
 gsap.to('#concert', {
   scrollTrigger: '#concert', 
