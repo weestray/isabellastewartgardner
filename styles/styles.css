@@ -159,7 +159,7 @@ ol li {
   margin-top: 2em;
 }
 .suspectname {
- 
+ margin-bottom: .5em;
 }
 
 #intro p, #outro p{
@@ -192,7 +192,7 @@ blockquote {
     border-radius: 15px;
     padding: 1em;
     max-width: 70ch;
-    margin: 2em auto;
+    margin: 2em auto 3em auto;
   }
   
   #paintingtut {
