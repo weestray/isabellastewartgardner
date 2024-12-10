@@ -91,7 +91,6 @@ const selectHotspot = (e) => {
   const clickedHotspot = e.target.parentElement;
   const container = clickedHotspot.parentElement;
   
-  // only include hotspots within same image to allow one open hotspot per image; change "container" to "document" to allow only one open hotspot for entire page:
   const hotspots = document.querySelectorAll(".lg-hotspot"); 
   hotspots.forEach(hotspot => {
     if (hotspot === clickedHotspot) {
